@@ -5,9 +5,12 @@ import Button from "./src/components/button/button.jsx";
 export default function App() {
 
   return (<>
-    <Text style={styles.textos}>Hello World</Text>
+    <Text style={styles.textos}>Iniciando Projeto</Text>
 
-    <Button texto="Acessar Sistema" />
+    <Button texto="Acessar" />
   </>
   );
 }
+
+
+// Anotacções Projeto = Aula 02 finalizada;
