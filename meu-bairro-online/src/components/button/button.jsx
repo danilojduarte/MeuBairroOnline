@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity } from "react-native";
-import { styles } from "./button.styles.js";
+import { styles } from "./button.style.js";
 
 
 function Button(props) {
