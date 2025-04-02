@@ -1,16 +1,12 @@
-import { Text } from 'react-native';
-import { styles } from "./styles.js";
-import Button from "./src/components/button/button.jsx";
+import Login from "./src/screens/login/login";
 
 export default function App() {
 
   return (<>
-    <Text style={styles.textos}>Iniciando Projeto</Text>
-
-    <Button texto="Acessar" />
+    <Login />
   </>
   );
 }
 
 
-// Anotacções Projeto = Aula 02 finalizada;
+// Anotacções Projeto = Iniciando aula 03 (14:52) Criando componentes imagens arquivo Header;
