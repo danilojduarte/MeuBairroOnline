@@ -4,7 +4,6 @@ export const styles = {
   container: {
         flex: 1,
         padding: 40,
-        alignItems: "center",
         justifyContent: "center",
 
       }

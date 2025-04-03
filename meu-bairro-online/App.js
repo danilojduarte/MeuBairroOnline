@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Iniciando aula 03 (14:52) Criando componentes imagens arquivo Header;
+// Anotacções Projeto = Aula 03(37:16) - Ajustando screen TextBox;

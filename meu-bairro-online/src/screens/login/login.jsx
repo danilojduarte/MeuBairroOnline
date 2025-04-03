@@ -9,7 +9,7 @@ function Login() {
     <Header texto="Acesse sua conta"/>
 
 
-    <TextBox />    
+    <TextBox label="E-mail" />
   
   </View>
 }
