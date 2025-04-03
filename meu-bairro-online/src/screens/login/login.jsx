@@ -5,7 +5,7 @@ import Header from "../../components/header/header.jsx";
 
 function Login() {
   return <View style={styles.container}>
-    <Header />
+    <Header texto="Acesse sua conta"/>
     
   
   </View>
