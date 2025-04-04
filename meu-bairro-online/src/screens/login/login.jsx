@@ -8,9 +8,14 @@ function Login() {
   return <View style={styles.container}>
     <Header texto="Acesse sua conta"/>
 
-
-    <TextBox label="E-mail" />
-  
+    <View style={styles.formGroup}>
+      <View style={styles.form}>
+        <TextBox label="E-mail" />
+      </View>
+      <View style={styles.form}>
+        <TextBox label="Senha" isPassword={true} />  
+      </View>
+    </View>
   </View>
 }
 
