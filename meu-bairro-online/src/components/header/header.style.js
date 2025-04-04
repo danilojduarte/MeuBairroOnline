@@ -7,7 +7,7 @@ export const styles = {
   },
   logo: {
     width: 170,
-    height: 50,
+    height: 185,
   },
   titulo: {
     color: COLORS.dark_gray,
