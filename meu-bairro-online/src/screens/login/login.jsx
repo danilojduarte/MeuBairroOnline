@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./login.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
@@ -21,7 +21,13 @@ function Login() {
       <View style={styles.form}>
         <Button texto="Acessar" />
       </View>
-      
+
+    </View>
+
+    <View style={styles.footer}>
+      <TouchableOpacity>
+        <Text style={styles.footerText}>Criar Minha Conta</Text>
+      </TouchableOpacity>
     </View>
   </View>
 }
