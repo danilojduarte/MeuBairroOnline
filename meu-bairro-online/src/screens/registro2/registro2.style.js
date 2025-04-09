@@ -16,6 +16,9 @@ export const styles = {
     width: "100%",
     marginBottom: 20,
   },
+  formHorizontal: {
+    flexDirection: "row",
+  },
   scrollView: {
     width: "100%"
   },
@@ -31,5 +34,14 @@ export const styles = {
     textAlign: "center",
     color: COLORS.dark_gray,
     fontSize: FONT_SIZE.md,
+  },
+  form70: {
+    width: "70%",
+    marginBottom: 15,
+    paddingRight: 10
+  },
+  form30: {
+    width: "30%",
+    marginBottom: 15,
   },
 };

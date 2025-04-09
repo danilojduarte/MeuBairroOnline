@@ -11,4 +11,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 03(52:23) - Ajustando screen Login;
+// Anotacções Projeto = Aula 04(21:25) - Conseito de navegação;
