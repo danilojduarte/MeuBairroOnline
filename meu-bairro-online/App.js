@@ -11,4 +11,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 04(21:25) - Conseito de navegação;
+// Anotacções Projeto = Aula 04(46:56) - Iniciando conceito de rotas;
