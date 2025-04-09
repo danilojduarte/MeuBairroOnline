@@ -5,32 +5,33 @@ import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 
 
-function Registro() {
+function Registro2() {
   return <>
   <View style={styles.container}>
     <ScrollView style={styles.scrollView}>
 
-    <Header texto="Criar sua conta."/>
+    <Header texto="Informe seu endereço."/>
 
     <View style={styles.formGroup}>
+      
     <View style={styles.form}>
-        <TextBox label="Nome Completo" />
+        <TextBox label="Endereço" />
       </View>
       
       <View style={styles.form}>
-        <TextBox label="E-mail" />
+        <TextBox label="Bairro" />
       </View>
 
       <View style={styles.form}>
-        <TextBox label="Escolha uma senha" isPassword={true} />  
+        <TextBox label="Cidade"/>  
       </View>
 
       <View style={styles.form}>
-        <TextBox label="Confirme a senha" isPassword={true} />  
+        <TextBox label="CEP"/>  
       </View>
 
       <View style={styles.form}>
-        <Button texto="Próximo passo" />
+        <Button texto="Criar minha conta" />
       </View>
     </View>
 
@@ -49,4 +50,4 @@ function Registro() {
   
 }
 
-export default Registro;
+export default Registro2;
