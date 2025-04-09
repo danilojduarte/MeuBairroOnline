@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import { styles } from "./registro.style.js";
+import { styles } from "./registro2.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
