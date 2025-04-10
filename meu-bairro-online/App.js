@@ -11,4 +11,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 04(46:56) - Iniciando conceito de rotas;
+// Anotacções Projeto = Aula 04(53:22) - Criando pasta Routs;
