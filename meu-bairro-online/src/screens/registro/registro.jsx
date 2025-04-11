@@ -5,7 +5,7 @@ import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 
 
-function Registro() {
+function Registro(props) {
   return <>
   <View style={styles.container}>
     <ScrollView style={styles.scrollView}>
@@ -30,20 +30,12 @@ function Registro() {
       </View>
 
       <View style={styles.form}>
-        <Button texto="Próximo passo" />
+        <Button texto="Próximo passo" onPress={() => props.navigation.navigate("registro2")} />
       </View>
     </View>
 
     </ScrollView>
-
-    
   </View>
-
-  <View style={styles.footer}>
-      <TouchableOpacity>
-        <Text style={styles.footerText}>Criar Minha Conta</Text>
-      </TouchableOpacity>
-    </View>
 
   </>
   

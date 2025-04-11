@@ -6,6 +6,7 @@ export const styles = {
     padding: 40,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: COLORS.white,
   },
   formGroup: {
     width: "100%",

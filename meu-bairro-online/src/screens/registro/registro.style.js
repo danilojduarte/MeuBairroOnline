@@ -3,9 +3,11 @@ import { COLORS, FONT_SIZE } from "../../constants/themes";
 export const styles = {
   container: {
     flex: 1,
-    padding: 40,
+    paddingLeft: 40,
+    paddingRight: 40,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: COLORS.white,
   },
   formGroup: {
     width: "100%",

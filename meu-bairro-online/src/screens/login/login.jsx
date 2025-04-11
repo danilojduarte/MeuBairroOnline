@@ -5,7 +5,7 @@ import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 import { useState } from "react";
 
-function Login() {
+function Login(props) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -13,7 +13,7 @@ function Login() {
   console.log(email,senha);
   return (
     <View style={styles.container}>
-      <Header texto="Acessar" />
+      <Header texto="" />
 
       <View style={styles.formGroup}>
         <View style={styles.form}>
@@ -37,7 +37,7 @@ function Login() {
       </View>
 
       <View style={styles.footer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => props.navigation.navigate("registro")}>
           <Text style={styles.footerText}>Criar Minha Conta</Text>
         </TouchableOpacity>
       </View>
