@@ -8,7 +8,9 @@ function Registro2() {
   return (
     <>
       <View style={styles.container}>
-        <ScrollView style={styles.scrollView}>
+        <ScrollView style={styles.scrollView}
+        automaticallyAdjustKeyboardInsets={true}>
+          
           <Header texto="Informe seu endereço." />
 
           <View style={styles.formGroup}>

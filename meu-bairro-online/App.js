@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 04(53:22) - Criando pasta Routs;
+// Anotacções Projeto = Aula 04(--) - Concluída,configurando routes;
