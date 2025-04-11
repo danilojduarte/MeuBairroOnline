@@ -6,14 +6,17 @@ import Button from "../../components/button/button.jsx";
 import { useState } from "react";
 
 function Login(props) {
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  function ProcessarLogin() {}
-  console.log(email,senha);
+function ProcessarLogin() {
+        console.log(email, senha);
+    }
+  
   return (
     <View style={styles.container}>
-      <Header texto="" />
+      <Header texto="email" />
 
       <View style={styles.formGroup}>
         <View style={styles.form}>
