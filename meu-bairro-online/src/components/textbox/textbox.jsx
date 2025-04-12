@@ -8,8 +8,7 @@ function TextBox(props) {
         <TextInput style={styles.input}
             placeholder={props.placeholder}
             secureTextEntry={props.isPassword}
-            // removendo a areo function onChangeText={(texto) => props.onChangeText(texto)}
-            onChangeText={props.onChangeText}
+            function onChangeText={(texto) => props.onChangeText(texto)}
             value={props.value}
         />
     </>

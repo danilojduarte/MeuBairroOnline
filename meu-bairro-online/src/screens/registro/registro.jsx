@@ -6,6 +6,14 @@ import Button from "../../components/button/button.jsx";
 
 
 function Registro(props) {
+    
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha1, setSenha1] = useState("");
+    const [senha2, setSenha2] = useState("");
+
+
+
     return <>
         <View style={styles.container}>
             <ScrollView style={styles.scrollView}>
@@ -13,19 +21,31 @@ function Registro(props) {
 
                 <View style={styles.formGroup}>
                     <View style={styles.form}>
-                        <TextBox label="Nome Completo" />
+                        <TextBox label="Nome Completo" 
+                        onChangeText={(texto) => setNome(texto)}
+                        value={nome}
+                        />
                     </View>
 
                     <View style={styles.form}>
-                        <TextBox label="E-mail" />
+                        <TextBox label="E-mail" 
+                        onChangeText={(texto) => setEmail(texto)}
+                        value={email}
+                        />
                     </View>
 
                     <View style={styles.form}>
-                        <TextBox label="Escolha uma senha" isPassword={true} />
+                        <TextBox label="Escolha uma senha" isPassword={true} 
+                        onChangeText={(texto) => setSenha1(texto)}
+                        value={senha1}
+                        />
                     </View>
 
                     <View style={styles.form}>
-                        <TextBox label="Confirme a senha" isPassword={true} />
+                        <TextBox label="Confirme a senha" isPassword={true} 
+                        onChangeText={(texto) => setSenha2(texto)}
+                        value={senha2}
+                        />
                     </View>
 
                     <View style={styles.form}>
