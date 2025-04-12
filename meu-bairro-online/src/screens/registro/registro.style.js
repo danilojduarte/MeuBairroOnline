@@ -19,7 +19,7 @@ export const styles = {
     marginBottom: 20,
   },
   scrollView: {
-    width: "100%"
+    width: "100%",
   },
   footer: {
     width: "100%",

@@ -7,7 +7,7 @@ export const styles = {
     paddingRight: 40,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.white
   },
   formGroup: {
     width: "100%",
