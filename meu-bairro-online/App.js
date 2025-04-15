@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 04(--) - Concluída,configurando routes;
+// Anotacções Projeto = Aula 05(27:53) - Create screen 'home' and component categories;
