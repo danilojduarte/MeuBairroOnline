@@ -3,6 +3,7 @@ import { styles } from "./registro.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
+import { useState } from "react";
 
 
 function Registro(props) {
