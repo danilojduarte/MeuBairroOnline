@@ -4,6 +4,8 @@ import icons from "../../constants/icons.js";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextBox from "../../components/textbox/textbox.jsx";
 import { useState } from "react";
+import Categorias from "../../components/categorias/categorias.jsx";
+import { categorias } from "../../constants/dados.js";
 
 
 function Home(){
@@ -23,6 +25,8 @@ function Home(){
       />
       
     </View>
+
+    <Categorias dados={categorias}/>
   </SafeAreaView>
 }
 
