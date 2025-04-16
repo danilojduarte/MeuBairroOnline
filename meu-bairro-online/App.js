@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 05(56:19) - Create component 'destaques';
+// Anotacções Projeto = Aula 05(1:12) - Create component 'restaurante' completed;
