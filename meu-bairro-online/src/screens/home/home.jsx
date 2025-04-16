@@ -1,11 +1,11 @@
-import { Image, View } from "react-native";
+import { Image, View, Text } from "react-native";
 import { styles } from "./home.style.js";
 import icons from "../../constants/icons.js";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextBox from "../../components/textbox/textbox.jsx";
 import { useState } from "react";
 import Categorias from "../../components/categorias/categorias.jsx";
-import { categorias, banners } from "../../constants/dados.js";
+import { categorias, banners, restaurantes } from "../../constants/dados.js";
 import Banners from "../../components/banners/banners.jsx";
 
 
@@ -29,6 +29,17 @@ function Home(){
 
     <Categorias dados={categorias}/>
     <Banners dados={banners}/>
+
+    {
+      restaurantes.map((restaurante, indice) => {
+        return (
+          <View key={indice}>
+            <Text>{restaurante.nome}</Text>
+          </View>
+        );
+      })
+    }
+
   </SafeAreaView>
 }
 
