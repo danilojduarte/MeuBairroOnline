@@ -46,7 +46,7 @@ export const banners = [
       id: 2,
       descricao: "Comida Saudável",
       icone: require("../assets/banner2.png")
-  }
+  },
 ];
 
 export const restaurantes = [
