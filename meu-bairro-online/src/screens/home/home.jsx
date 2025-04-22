@@ -38,6 +38,7 @@ function Home() {
                 logotipo={restaurante.logotipo}
                 nome={restaurante.nome}
                 endereco={restaurante.endereco}
+                icone={icons.favoritoFull}
               />
             </View>
           );
