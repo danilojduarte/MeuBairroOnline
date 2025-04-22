@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 05(1:12) - Create component 'restaurante' completed;
+// Anotacções Projeto = Aula 06(26:13) - Finalizada screen favoritos;;
