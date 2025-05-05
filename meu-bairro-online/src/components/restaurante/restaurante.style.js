@@ -9,7 +9,7 @@ export const styles = {
   logotipo:{
     width: 80,
     height: 80,
-    borderRadius: 6,
+    borderRadius: 9,
   },
   textos:{
     flex: 1,
