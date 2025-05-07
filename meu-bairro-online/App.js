@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 06(33:22) - Create to screens pedidos;
+// Anotacções Projeto = Aula 06(53:42) - Ajustando screen pedido;

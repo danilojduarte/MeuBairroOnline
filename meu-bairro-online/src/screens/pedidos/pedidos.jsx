@@ -1,24 +1,19 @@
 import { FlatList, Image, View, Text } from "react-native";
-import { restaurantes } from "../../constants/dados";
-import Restaurante from "../../components/restaurante/restaurante";
+import { pedidos } from "../../constants/dados";
 import icons from "../../constants/icons";
 import { styles } from "./pedidos.style";
+import Pedido from "../../components/pedido/pedido";
 
 function Pedidos() {
   return (
     <View style={styles.container}>
       <FlatList
-        data={restaurantes}
+        data={pedidos}
         keyExtractor={(restaurantes) => restaurantes.id}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
-            <Restaurante
-              nome={item.nome}
-              endereco={item.endereco}
-              logotipo={item.logotipo}
-              icone={icons.remove}
-            />
+            <Pedido logotipo={item.logotipo}/>
           );
         }}
         contentContainerStyle={styles.containerList}
