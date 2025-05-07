@@ -9,7 +9,11 @@ function Pedido(props) {
         <Text style={styles.nome}>Nome...</Text>
 
         <View style={styles.containervalor}>
-          <Text style={styles.valor}>10,00</Text>
+          <Text style={styles.valor}>
+            {
+            new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL" }).format(props.valor)
+            }
+            </Text>
           <Text style={styles.valor}>01/01/2000</Text>
         </View>
 
