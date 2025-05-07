@@ -12,8 +12,11 @@ function Pedidos() {
         keyExtractor={(restaurantes) => restaurantes.id}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {
-          return (
-            <Pedido logotipo={item.logotipo}/>
+          return (<Pedido logotipo={item.logotipo}
+           nome={item.nome} 
+           valor={item.vl_total}
+           dt_pedido={item.dt_pedido}
+           status={item.status}/>
           );
         }}
         contentContainerStyle={styles.containerList}
