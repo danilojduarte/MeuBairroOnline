@@ -3,7 +3,7 @@ import { styles } from "./perfil.style";
 
 function Perfil() {
   return(
-    <View>
+    <View style={styles.container}>
 
     </View>
   )
