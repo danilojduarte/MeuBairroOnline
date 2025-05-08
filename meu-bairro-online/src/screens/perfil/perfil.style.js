@@ -6,4 +6,8 @@ export const styles = {
     backgroundColor: COLORS.white,
     padding: 12,
   },
+  icone:{
+    width: 30,
+    height: 30,
+  },
 };

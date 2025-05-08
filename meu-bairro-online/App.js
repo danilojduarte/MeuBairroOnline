@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 06(58:09) - Create screen perfil;
+// Anotacções Projeto = Aula 06(1:03:20) - Create screen perfil e add icons
