@@ -6,7 +6,7 @@ import cart from "../assets/cart.png";
 import favoritoFull from "../assets/favorito-full.png";
 import empty from "../assets/empty.png";
 import endereco from "../assets/endereco.png";
-import more from "../assets/mais.png";
+import more from "../assets/expandir.png";
 import dados from "../assets/meus-dados.png";
 import logout from "../assets/logout.png";
 

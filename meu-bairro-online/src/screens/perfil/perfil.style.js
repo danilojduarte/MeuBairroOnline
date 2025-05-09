@@ -6,8 +6,21 @@ export const styles = {
     backgroundColor: COLORS.white,
     padding: 12,
   },
-  icone:{
+  item: {
+    flexDirection: "row",
+    padding: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.gray,
+  },
+  icone: {
     width: 30,
     height: 30,
+  },
+  textos: {
+    flex: 1,
+    marginLeft: 10,
+  },
+  containerIcone: {
+    justifyContent: "center",
   },
 };
