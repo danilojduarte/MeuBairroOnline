@@ -9,4 +9,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 06(1:17) - Ajustando screen perfil
+// Anotacções Projeto = Aula 06(##:##) - Concluída, finalizada tela de perfils.

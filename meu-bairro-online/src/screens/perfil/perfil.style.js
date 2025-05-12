@@ -4,7 +4,7 @@ export const styles = {
   container: {
     flex: 1,
     backgroundColor: COLORS.white,
-    padding: 12,
+    paddingTop: 12,
   },
   item: {
     flexDirection: "row",
@@ -22,5 +22,21 @@ export const styles = {
   },
   containerIcone: {
     justifyContent: "center",
+  },
+  titulo:{
+    color: COLORS.dark_gray,
+    fontSize: FONT_SIZE.md,
+  },
+  subtitulo: {
+    color: COLORS.medium_gray,
+    fontSize: FONT_SIZE.sm,
+  },
+  more:{
+    width: 20,
+    height: 20,
+  },
+  borderTop:{
+    borderTopWidth: 1,
+    borderTopColor: COLORS.gray,
   },
 };
