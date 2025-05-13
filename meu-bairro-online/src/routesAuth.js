@@ -1,5 +1,8 @@
-function RoutesSAuth() {
+
+
+
+function RoutesAuth() {
   <>  </>
 }
 
-export default RoutesSAuth;
+export default RoutesAuth;
