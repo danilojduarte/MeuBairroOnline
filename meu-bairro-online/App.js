@@ -1,7 +1,7 @@
 import Routes from "./src/routes";
 import RoutesAuth from "./src/routesAuth.js";
 
-const isUserAuth = false;
+const isUserAuth = true;
 
 export default function App() {
   return isUserAuth ? <RoutesAuth /> : <Routes />
@@ -10,4 +10,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 06(##:##) - Concluída, finalizada tela de perfils.
+// Anotacções Projeto = Aula 07(11:40) - Create to menu navegation.
