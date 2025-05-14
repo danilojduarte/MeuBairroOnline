@@ -10,6 +10,11 @@ import more from "../assets/expandir.png";
 import dados from "../assets/meus-dados.png";
 import logout from "../assets/logout.png";
 
+import abaHome from "../assets/aba-home.png";
+import abaFavoritos from "../assets/aba-favorito.png"; 
+import abaPedidos from "../assets/aba-pedidos.png";
+import abaPerfil from "../assets/aba-perfil.png";
+
 export default {
   back,
   remove,
@@ -26,4 +31,9 @@ export default {
   more,
   dados,
   logout,
+  
+  abaHome,
+  abaFavoritos,
+  abaPedidos,
+  abaPerfil
 };

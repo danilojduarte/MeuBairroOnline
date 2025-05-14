@@ -1,7 +1,7 @@
 import Routes from "./src/routes";
 import RoutesAuth from "./src/routesAuth.js";
 
-const isUserAuth = true;
+const isUserAuth = false;
 
 export default function App() {
   return isUserAuth ? <RoutesAuth /> : <Routes />
@@ -10,4 +10,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 07(11:40) - Create to menu navegation.
+// Anotacções Projeto = Aula 07(33:22) - Modo de navegação entre as telas concluído;
