@@ -25,8 +25,30 @@ function Cardapio() {
         </View>
         <Image source={icons.favoritoFull} style={styles.favoritoFull}/>
       </View>
+
+      <View style={styles.location}>
+        <Image source={icons.location} style={styles.locationImg} />
+        <Text style={styles.endereco}>Rua Rosa Filomena, 446 C5</Text>
+      </View>
+
+      {
+        restaurante.cardapio.map((item) => {
+          return <View key={item.idCategoria} style={styles.containerProduto}>
+            <Text style={styles.categoria}>{item.categoria}</Text>
+            
+            {
+              item.itens.map((prod) => {
+                return <Text>{prod.nome}</Text>
+              })
+            }
+
+          </View>
+        })
+      }
+
     </View>
   );
+
 }
 
 export default Cardapio;
