@@ -3,10 +3,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import icons from "./constants/icons.js";
 
-import Home from "./screens/home/home.jsx";
-import Favoritos from "./screens/favoritos/favoritos.jsx";
-import Pedidos from "./screens/pedidos/pedidos.jsx";
-import Perfil from "./screens/perfil/perfil.jsx";
+import Home from "./screens/aba-home/aba-home.jsx";
+import Favoritos from "./screens/aba-favoritos/aba-favoritos.jsx";
+import Pedidos from "./screens/aba-pedidos/aba-pedidos.jsx";
+import Perfil from "./screens/aba-perfil/aba-perfil.jsx";
 
 const Tab = createBottomTabNavigator();
 

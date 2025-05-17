@@ -1,5 +1,5 @@
 import { Image, View, Text, ScrollView } from "react-native";
-import { styles } from "./home.style.js";
+import { styles } from "./aba-home.style.js";
 import icons from "../../constants/icons.js";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TextBox from "../../components/textbox/textbox.jsx";
@@ -9,7 +9,7 @@ import { categorias, banners, restaurantes } from "../../constants/dados.js";
 import Banners from "../../components/banners/banners.jsx";
 import Restaurante from "../../components/restaurante/restaurante.jsx";
 
-function Home() {
+function AbaHome() {
   const [busca, setBusca] = useState("");
 
   return (
@@ -48,4 +48,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AbaHome;

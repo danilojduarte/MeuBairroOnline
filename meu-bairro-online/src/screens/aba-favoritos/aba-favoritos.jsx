@@ -2,9 +2,9 @@ import { FlatList, Image, View, Text } from "react-native";
 import { restaurantes } from "../../constants/dados";
 import Restaurante from "../../components/restaurante/restaurante";
 import icons from "../../constants/icons";
-import { styles } from "./favoritos.style";
+import { styles } from "./aba-favoritos.style";
 
-function Favoritos() {
+function AbaFavoritos() {
   return (
     <View style={styles.container}>
       <FlatList
@@ -35,4 +35,4 @@ function Favoritos() {
   );
 }
 
-export default Favoritos;
+export default AbaFavoritos;

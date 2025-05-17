@@ -12,4 +12,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 07(00:00) - Aula 07 concluída!
+// Anotacções Projeto = Aula 08(01:03:35) - Criando nova tela "principal"!
