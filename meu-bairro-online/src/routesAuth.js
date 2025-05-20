@@ -1,25 +1,28 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-
-
 const Tab = createBottomTabNavigator();
-
 
 function RoutesAuth() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="login"
+          component={Login}
+          options={{
+            headerShown: false,
+          }}
+        />
 
-      <Stack.Screen name="login" component={Login} options={{
-        headerShown: false,
-      }} />
-
-      <Stack.Screen name="registro2" component={Registro2} options={{
-        headerShown: false,
-      }} />    
-
-    </Stack.Navigator>
+        <Stack.Screen
+          name="registro2"
+          component={Registro2}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
