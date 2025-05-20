@@ -2,10 +2,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import icons from "./constants/icons.js";
 
-import Home from "../../screens/aba-home/aba-home.jsx";
-import Favoritos from "../../screens/aba-favoritos/aba-favoritos.jsx";
-import Pedidos from "../../screens/aba-pedidos/aba-pedidos.jsx";
-import Perfil from "../../screens/aba-perfil/aba-perfil.jsx";
+import AbaHome from "../../screens/aba-home/aba-home.jsx";
+import AbaFavoritos from "../../screens/aba-favoritos/aba-favoritos.jsx";
+import AbaPedidos from "../../screens/aba-pedidos/aba-pedidos.jsx";
+import AbaPerfil from "../../screens/aba-perfil/aba-perfil.jsx";
 
 
 const Tab = createBottomTabNavigator();
@@ -16,7 +16,7 @@ function Principal() {
   <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
         <Tab.Screen
           name="home"
-          component={Home}
+          component={AbaHome}
           options={{
             headerShown: false,
             tabBarIcon: ({ focused }) => {
@@ -32,7 +32,7 @@ function Principal() {
 
         <Tab.Screen
           name="favoritos"
-          component={Favoritos}
+          component={AbaFavoritos}
           options={{
             title: "Favoritos",
             headerTitleAlign: "center",
@@ -51,7 +51,7 @@ function Principal() {
 
         <Tab.Screen
           name="pedidos"
-          component={Pedidos}
+          component={AbaPedidos}
           options={{
             title: "Meus Pedidos",
             headerTitleAlign: "center",
@@ -70,7 +70,7 @@ function Principal() {
 
         <Tab.Screen
           name="perfil"
-          component={Perfil}
+          component={AbaPerfil}
           options={{
             title: "Meu Perfil",
             headerTitleAlign: "center",
