@@ -9,7 +9,12 @@ import { categorias, banners, restaurantes } from "../../constants/dados.js";
 import Banners from "../../components/banners/banners.jsx";
 import Restaurante from "../../components/restaurante/restaurante.jsx";
 
-function AbaHome() {
+function AbaHome(props) {
+
+  function OpenCardapio() {
+props.navigation.navigate("cardapio")  
+}
+  
   const [busca, setBusca] = useState("");
 
   return (
@@ -39,6 +44,7 @@ function AbaHome() {
                 nome={restaurante.nome}
                 endereco={restaurante.endereco}
                 icone={icons.favoritoFull}
+                onPress={OpenCardapio}
               />
             </View>
           );

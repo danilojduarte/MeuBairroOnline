@@ -4,7 +4,7 @@ import { restaurante } from "../../constants/dados";
 import icons from "../../constants/icons";
 import Produto from "../../components/produto/produto.jsx";
 
-function Cardapio() {
+function Cardapio(props) {
   return (
     <View style={styles.container}>
       <View style={styles.containerFoto}>
@@ -14,7 +14,7 @@ function Cardapio() {
           resizeMode="contain"
         />
 
-        <TouchableOpacity style={styles.containerBack}>
+        <TouchableOpacity style={styles.containerBack} onPress={props.navigation.goBack}>
           <Image source={icons.back2} style={styles.back} />
         </TouchableOpacity>
       </View>
