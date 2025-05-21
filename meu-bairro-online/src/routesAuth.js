@@ -1,28 +1,32 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Principal from "./screens/principal/principal.jsx";
+import Cardapio from "./screens/cardapio/cardapio.jsx";
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 function RoutesAuth() {
   return (
     <NavigationContainer>
+
       <Stack.Navigator>
         <Stack.Screen
-          name="login"
-          component={Login}
+          name="princiapal"
+          component={Principal}
           options={{
             headerShown: false,
           }}
         />
 
         <Stack.Screen
-          name="registro2"
-          component={Registro2}
+          name="cardapio"
+          component={Cardapio}
           options={{
             headerShown: false,
           }}
         />
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 }
