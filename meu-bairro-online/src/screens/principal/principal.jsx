@@ -1,6 +1,7 @@
+import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import icons from "./constants/icons.js";
+import icons from "../../constants/icons.js";
 
 import AbaHome from "../../screens/aba-home/aba-home.jsx";
 import AbaFavoritos from "../../screens/aba-favoritos/aba-favoritos.jsx";
@@ -12,8 +13,7 @@ const Tab = createBottomTabNavigator();
 
 
 function Principal() {
-  return 
-  <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
+  return <Tab.Navigator screenOptions={{ tabBarShowLabel: false }}>
         <Tab.Screen
           name="home"
           component={AbaHome}

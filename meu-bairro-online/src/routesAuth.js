@@ -11,7 +11,7 @@ function RoutesAuth() {
 
       <Stack.Navigator>
         <Stack.Screen
-          name="princiapal"
+          name="principal"
           component={Principal}
           options={{
             headerShown: false,
