@@ -25,10 +25,6 @@ export const styles = {
     flexDirection: "row",
     padding: 10,
   },
-  favoritoFull: {
-    width: 40,
-    height: 40,
-  },
   headerTextos: {
     flex: 1,
   },
@@ -38,32 +34,33 @@ export const styles = {
     color: COLORS.dark_gray,
     marginBottom: 2,
   },
-  taxa: {
+  descricao: {
     fontSize: FONT_SIZE.md,
     color: COLORS.medium_gray,
   },
-  location: {
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  locationImg: {
-    width: 40,
-    height: 40,
-    margin: 10,
-  },
-  endereco: {
-    flex: 1,
+  valor: {
     fontSize: FONT_SIZE.md,
-    color: COLORS.dark_gray, 
-  },
-  containerProduto:{
-    padding: 10,
-  },
-  categoria:{
-     fontSize: FONT_SIZE.md,
     fontWeight: "bold",
     color: COLORS.dark_gray,
-    padding: 2,
+    marginBottom: 2,
+    marginTop: 20,
   },
+  headerObs:{
+    width: "100%",
+    padding: 10,
+  
+  },
+  multiline:{
+    flex: 1,
+    backgroundColor: COLORS.light_gray,
+    padding: 10,
+    color: COLORS.dark_gray,
+    borderRadius: 10,
+
+    borderWidth: 1,
+    borderColor: COLORS.gray,
+
+    minHeight: 120,
+    textAlignVertical: "top",
+  }
 };
