@@ -12,4 +12,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 09(00##) - Iniciando aula 09!
+// Anotacções Projeto = Aula 09(26:44) - Concluído detalhes do pedido!

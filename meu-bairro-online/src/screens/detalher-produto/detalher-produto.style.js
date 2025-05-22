@@ -45,22 +45,46 @@ export const styles = {
     marginBottom: 2,
     marginTop: 20,
   },
-  headerObs:{
+  headerObs: {
     width: "100%",
     padding: 10,
-  
   },
-  multiline:{
+  multiline: {
     flex: 1,
     backgroundColor: COLORS.light_gray,
     padding: 10,
     color: COLORS.dark_gray,
-    borderRadius: 10,
+    borderRadius: 4,
 
     borderWidth: 1,
     borderColor: COLORS.gray,
 
     minHeight: 120,
     textAlignVertical: "top",
-  }
+  },
+  footer: {
+    position: "absolute",
+    // Ajuste altura do Footer
+    bottom: 30,
+    left: 0,
+    flexDirection: "row",
+    padding: 10,
+    alignItems: "center",
+  },
+  imgQtd: {
+    width: 40,
+    height: 40,
+  },
+  qtd: {
+    fontSize: FONT_SIZE.lg,
+    color: COLORS.dark_gray,
+    width: 45,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  footerBtn:{
+    flex: 1,
+    marginRight: 5,
+    marginLeft: 15,
+  },
 };

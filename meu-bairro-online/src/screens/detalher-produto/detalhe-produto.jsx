@@ -1,7 +1,7 @@
 import { Image, TouchableOpacity, View, Text, TextInput } from "react-native";
 import { styles } from "./detalher-produto.style.js";
-import { restaurante } from "../../constants/dados";
 import icons from "../../constants/icons";
+import Button from "../../components/button/button.jsx";
 
 function DetalheProduto(props) {
   return (
@@ -34,8 +34,23 @@ function DetalheProduto(props) {
         numberOfLines={4} />
       </View>
 
+      <View style={styles.footer}>
+        <TouchableOpacity>
+          <Image source={icons.menos} style={styles.imgQtd} />
+        </TouchableOpacity>
 
+        <Text style={styles.qtd}>1</Text>
 
+        <TouchableOpacity>
+          <Image source={icons.mais} style={styles.imgQtd} />
+        </TouchableOpacity>
+      
+
+      <View style={styles.footerBtn}>
+          <Button texto="Inserir" />
+      </View>
+
+      </View>
     </View>
   );
 }
