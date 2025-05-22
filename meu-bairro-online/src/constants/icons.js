@@ -16,6 +16,7 @@ import abaFavoritos from "../assets/aba-favorito.png";
 import abaPedidos from "../assets/aba-pedidos.png";
 import abaPerfil from "../assets/aba-perfil.png";
 import location from "../assets/location.png";
+import produto from "../assets/produto-pizza.png";
 
 export default {
   back,
@@ -40,4 +41,5 @@ export default {
   abaPedidos,
   abaPerfil,
   location,
+  produto,
 };
