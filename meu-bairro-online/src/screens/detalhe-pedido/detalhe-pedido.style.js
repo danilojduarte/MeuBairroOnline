@@ -4,87 +4,42 @@ export const styles = {
   container: {
     flex: 1,
     backgroundColor: COLORS.white,
-  },
-  containerFoto: {
-    alignItems: "center",
-  },
-  foto: {
-    height: 150,
-  },
-  containerBack: {
-    position: "absolute",
-    top: 30,
-    left: 15,
-  },
-  back: {
-    width: 40,
-    height: 40,
+    padding: 20,
+    paddingTop: 35,
   },
   header: {
     width: "100%",
-    flexDirection: "row",
-    padding: 10,
-  },
-  headerTextos: {
-    flex: 1,
-  },
-  nome: {
-    fontSize: FONT_SIZE.md,
-    fontWeight: "bold",
-    color: COLORS.dark_gray,
-    marginBottom: 2,
-  },
-  descricao: {
-    fontSize: FONT_SIZE.md,
-    color: COLORS.medium_gray,
-  },
-  valor: {
-    fontSize: FONT_SIZE.md,
-    fontWeight: "bold",
-    color: COLORS.dark_gray,
-    marginBottom: 2,
-    marginTop: 20,
-  },
-  headerObs: {
-    width: "100%",
-    padding: 10,
-  },
-  multiline: {
-    flex: 1,
-    backgroundColor: COLORS.light_gray,
-    padding: 10,
-    color: COLORS.dark_gray,
-    borderRadius: 4,
-
-    borderWidth: 1,
-    borderColor: COLORS.gray,
-
-    minHeight: 120,
-    textAlignVertical: "top",
-  },
-  footer: {
-    position: "absolute",
-    // Ajuste altura do Footer
-    bottom: 30,
-    left: 0,
-    flexDirection: "row",
-    padding: 10,
-    alignItems: "center",
-  },
-  imgQtd: {
-    width: 40,
     height: 40,
+    justifyContent: "center",
   },
-  qtd: {
-    fontSize: FONT_SIZE.lg,
-    color: COLORS.dark_gray,
-    width: 45,
+  containerBack: {
+    position: "absolute",
+    top: 7,
+    left: 0,
+  },
+  back: {
+    width: 30,
+    height: 30,
+  },
+  titulo:{
+    fontSize: FONT_SIZE.md,
     fontWeight: "bold",
+    color: COLORS.dark_gray,
     textAlign: "center",
   },
-  footerBtn:{
-    flex: 1,
-    marginRight: 5,
-    marginLeft: 15,
+  valores:{
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 4,
+    marginBottom: 4,
+  },
+  valor:{
+    fontSize: FONT_SIZE.md,
+    color: COLORS.dark_gray,
+  },
+  total:{
+    fontSize: FONT_SIZE.sm,
+    color: COLORS.dark_gray,
+    fontWeight: "bold",
   },
 };
