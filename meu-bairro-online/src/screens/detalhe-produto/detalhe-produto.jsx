@@ -1,6 +1,6 @@
 import { Image, TouchableOpacity, View, Text, TextInput } from "react-native";
-import { styles } from "./detalher-produto.style.js";
-import icons from "../../constants/icons";
+import { styles } from "./detalhe-produto.style.js";
+import icons from "../../constants/icons.js";
 import Button from "../../components/button/button.jsx";
 
 function DetalheProduto(props) {
