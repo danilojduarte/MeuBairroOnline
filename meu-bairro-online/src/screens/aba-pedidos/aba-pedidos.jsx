@@ -3,8 +3,14 @@ import { pedidos } from "../../constants/dados";
 import icons from "../../constants/icons";
 import { styles } from "./aba-pedidos.style";
 import Pedido from "../../components/pedido/pedido";
+import { useLinkProps } from "@react-navigation/native";
 
-function AbaPedidos() {
+function AbaPedidos(props) {
+
+  function DetalhePedido() {
+    props.navigation.navigate("detalhe-pedido");
+  }
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -16,7 +22,8 @@ function AbaPedidos() {
            nome={item.nome} 
            valor={item.vl_total}
            dt_pedido={item.dt_pedido}
-           status={item.status}/>
+           status={item.status}
+           onClickPedido={DetalhePedido} />
           );
         }}
         contentContainerStyle={styles.containerList}

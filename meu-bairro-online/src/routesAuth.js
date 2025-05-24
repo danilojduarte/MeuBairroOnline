@@ -12,26 +12,29 @@ function RoutesAuth() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+
+        <Stack.Screen
+          name="principal"
+          component={Principal}
+          options={{
+            headerShown: false,
+          }}
+        />
         
         <Stack.Screen
           name="detalhe-pedido"
           component={DetalhePedido}
           options={{
             headerShadowVisible: false,
+            title: "Meu Pedido",
+            headerTitleAlign:"center",
+            animation: "slide_from_bottom",
           }}
         />
 
         <Stack.Screen
           name="detalhe-produto"
           component={DetalheProduto}
-          options={{
-            headerShown: false,
-          }}
-        />
-
-        <Stack.Screen
-          name="principal"
-          component={Principal}
           options={{
             headerShown: false,
           }}

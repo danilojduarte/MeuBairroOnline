@@ -5,10 +5,10 @@ import icons from "../../constants/icons.js";
 import { pedido } from "../../constants/dados.js";
 import Produto from "../../components/produto/produto.jsx";
 
-function DetalhePedido() {
+function DetalhePedido(props) {
   return (
     <View style={styles.container}>
-      
+
       <FlatList
         data={pedido.itens}
         keyExtractor={(item) => item.id}

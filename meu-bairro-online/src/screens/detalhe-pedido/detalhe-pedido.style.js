@@ -5,7 +5,9 @@ export const styles = {
     flex: 1,
     backgroundColor: COLORS.white,
     padding: 20,
-    paddingTop: 35,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingBottom: 15,
   },
   valores:{
     flexDirection: "row",
