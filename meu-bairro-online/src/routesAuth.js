@@ -17,7 +17,7 @@ function RoutesAuth() {
           name="detalhe-pedido"
           component={DetalhePedido}
           options={{
-            headerShown: false,
+            headerShadowVisible: false,
           }}
         />
 

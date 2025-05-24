@@ -8,13 +8,7 @@ import Produto from "../../components/produto/produto.jsx";
 function DetalhePedido() {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.containerBack}>
-          <Image source={icons.back} style={styles.back} />
-        </TouchableOpacity>
-        <Text style={styles.titulo}>Detalhes do Pedido</Text>
-      </View>
-
+      
       <FlatList
         data={pedido.itens}
         keyExtractor={(item) => item.id}
