@@ -1,4 +1,4 @@
-import { Image, View, Text, ScrollView } from "react-native";
+import { Image, View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./aba-home.style.js";
 import icons from "../../constants/icons.js";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -21,7 +21,10 @@ props.navigation.navigate("cardapio")
     <SafeAreaView style={styles.container}>
       <View style={styles.headerBar}>
         <Image source={icons.logo2} style={styles.logo} />
-        <Image source={icons.cart} style={styles.cart} />
+
+        <TouchableOpacity onPress={() => props.navigation.navigate("checkout")}>
+          <Image source={icons.cart} style={styles.cart} />
+        </TouchableOpacity>
       </View>
 
       <View style={styles.busca}>

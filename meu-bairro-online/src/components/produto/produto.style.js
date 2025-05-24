@@ -29,4 +29,12 @@ export const styles = {
     color: COLORS.dark_gray,
     marginTop: 8,
   },
+  delete:{
+    width: 28,
+    height: 28,
+  },
+  containerDelete:{
+    alignItems: "flex-end",
+    marginTop: 8,
+  },
 };
