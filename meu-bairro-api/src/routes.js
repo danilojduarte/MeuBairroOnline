@@ -1,5 +1,10 @@
+import { Router } from "express";
+
+const router = Router();
 
 
-app.get("/teste", function(req, res){
+router.get("/teste", function(req, res){
   res.status(401).json({mensagem: "Senha Inválida"});
 });
+
+export default router;
