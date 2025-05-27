@@ -77,4 +77,4 @@ export default router;
 
 
 
-//Anotações API - Aula 11(00:00) Finalizada, iniciada criação API;
+//Anotações API - Aula 12(35:52) Criando Banco de dados e atribuindo itens ao db;
