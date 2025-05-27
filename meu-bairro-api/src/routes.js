@@ -1,4 +1,5 @@
 import { Router } from "express";
+import controllerCategoria from "./controllers/controller.categoria";
 
 const router = Router();
 
@@ -58,20 +59,7 @@ router.get("/restaurantes", (req, res) => {
   ]);
 });
 
-router.get("/categorias", (req, res) => {
-  
-  //Query Params: http://localhost:3001/categorias
-
-  
-  const busca = req.query.busca;
-  
-  res.json([
-    {id_categoria: 1, categoria: "Burguers" },
-    {id_categoria: 2, categoria: "Pizza" },
-    {id_categoria: 3, categoria: "Fritas" },
-
-  ]);
-});
+router.get("/categorias", controllerCategoria.Listar);
 
 export default router;
 
