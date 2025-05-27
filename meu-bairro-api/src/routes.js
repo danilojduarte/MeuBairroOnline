@@ -65,4 +65,4 @@ export default router;
 
 
 
-//Anotações API - Aula 12(35:52) Criando Banco de dados e atribuindo itens ao db;
+//Anotações API - Aula 12(01:02:01) Criando rota repository;

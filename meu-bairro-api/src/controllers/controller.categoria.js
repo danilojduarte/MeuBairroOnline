@@ -1,8 +1,10 @@
+import servicesCategoria from "../services/services.categoria.js";
 
-
-function Listar(req, res) {
+async function Listar(req, res) {
   try {
-    res.status(200).json();
+    const categorias = await servicesCategoria.Listar();
+
+    res.status(200).json(categorias);
   } catch (error) {
     res.status(500).json({error});
   }

@@ -1,6 +1,6 @@
 
 
-function Listar(){
+async function Listar(){
   const categorias = [
     {id_categoria: 1, categoria: "Burguers" },
     {id_categoria: 2, categoria: "Pizza" },
