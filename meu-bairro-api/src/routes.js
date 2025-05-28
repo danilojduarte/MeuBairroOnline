@@ -2,6 +2,7 @@ import { Router } from "express";
 import controllerCategoria from "./controllers/controller.categoria.js";
 import controllerBanner from "./controllers/controller.banner.js";
 import controllerEmpresa from "./controllers/controller.empresa.js";
+import controllerPedido from "./controllers/controller.pedido.js";
 
 const router = Router();
 
@@ -65,10 +66,12 @@ router.get("/categorias", controllerCategoria.Listar);
 router.get("/banners", controllerBanner.Listar);
 
 router.get("/empresas/destaques", controllerEmpresa.Destaques);
+router.get("/pedidos", controllerPedido.Listar);
+router.get("/pedidos/:id_pedido", controllerPedido.ListarId);
 
 
 export default router;
 
 
 
-//Anotações API - Aula 13(00:00) Iniciando conteúdo;
+//Anotações API - Aula 13(41:31) criando rotas para meus pedidos;
