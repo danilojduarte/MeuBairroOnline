@@ -3,7 +3,11 @@ import { execute } from "../database/sqlite.js";
 
 async function Destaques() {
 
-  const sql = "select * from categoria order by ordem";
+  const sql = `select e.*, 'N' as favorito
+from destaque d
+join empresa e on (e.id_empresa = d.id_empresa)
+order by ordem`;
+
   const empresas = await execute(sql, []);
 
   return empresas;
