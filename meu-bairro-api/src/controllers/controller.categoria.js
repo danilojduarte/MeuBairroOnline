@@ -1,4 +1,4 @@
-import servicesCategoria from "../services/services.categoria.js";
+import servicesCategoria from "../services/service.categoria.js";
 
 async function Listar(req, res) {
   try {

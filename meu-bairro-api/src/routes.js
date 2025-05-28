@@ -1,5 +1,6 @@
 import { Router } from "express";
 import controllerCategoria from "./controllers/controller.categoria.js";
+import controllerBanner from "./controllers/controller.banner.js";
 
 const router = Router();
 
@@ -60,9 +61,11 @@ router.get("/restaurantes", (req, res) => {
 });
 
 router.get("/categorias", controllerCategoria.Listar);
+router.get("/banners", controllerBanner.Listar);
+
 
 export default router;
 
 
 
-//Anotações API - Aula 12(01:02:01) Criando rota repository;
+//Anotações API - Aula 13(00:00) Iniciando conteúdo;
