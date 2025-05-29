@@ -21,9 +21,20 @@ async function ListarId(id_pedido) {
   where p.id_pedido = ?
   order by p.id_pedido desc`;
 
-  const pedidos = await execute(sql, [id_pedido]);
 
-  return pedidos;
+  const sqlItens = `select i.*, p.nome, p.descricao, p.icone
+  from pedido_item i
+  join produto p on (p.id_produto = i.id_produto)
+  where i.id_pedido = ?
+  order by i.id_item`;
+
+  
+  const pedido = await execute(sql, [id_pedido]);
+  const itens = await execute(sqlItens, [id_pedido]);
+
+  pedido[0].itens = itens;
+
+  return pedido[0];
 }
 
 
