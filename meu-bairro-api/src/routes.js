@@ -27,20 +27,5 @@ export default router;
 
 
 
-//Anotações API - Aula 13(41:31) criando rotas para meus pedidos;
-
-
-// router.get("/restaurantes", (req, res) => {
-  
-  //URI Params: http://localhost:3001/restaurantes/10
-  //Query Params: http://localhost:3001/restaurantes?busca=Pizza (Somente com GET)
-
-  
-//   const busca = req.query.busca;
-  
-//   res.json([
-//     {restaurante: 1, nome: "Burguer King" },
-//     {restaurante: 2, nome: "McDonald's" },
-
-//   ]);
-// });
+//Anotações API - Aula 14(00:00) Iniciando estudos sobre segurança do app;  
+ 
