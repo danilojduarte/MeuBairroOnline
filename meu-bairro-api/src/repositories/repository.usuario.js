@@ -1,4 +1,4 @@
-import { execute } from "../database/sqlite.js";
+  import { execute } from "../database/sqlite.js";
 
 
 async function Favoritos(id_usuario) {
@@ -8,10 +8,20 @@ from usuario_favorito f
 join empresa e on (e.id_empresa = f.id_empresa)
 where f.id_usuario = ?`;
 
-  const favoritos = await execute(sql, [id_usuario]);
+  const favoritos = await execute(sql, []);
 
   return favoritos;
 }
 
+async function Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep){
 
-export default { Favoritos };
+  const sql = `insert into usuario (nome, email, senha, endereco, complemento, bairro, cidade, uf, cep,  dt_cadastro)
+  values (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP);
+select last_insert_rowid() as id_usuario`;
+
+  const usuario = await execute(sql, [nome, email, senha, endereco, complemento, bairro, cidade, uf, cep]);
+
+  return usuario;
+}
+
+export default { Favoritos, Inserir };

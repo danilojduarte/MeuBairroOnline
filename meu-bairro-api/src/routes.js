@@ -4,21 +4,21 @@ import controllerBanner from "./controllers/controller.banner.js";
 import controllerEmpresa from "./controllers/controller.empresa.js";
 import controllerPedido from "./controllers/controller.pedido.js";
 import controllerUsuario from "./controllers/controller.usuario.js";
+import jwt from "./token.js";
 
 const router = Router();
 
 // Empresas
-router.get("/categorias", controllerCategoria.Listar);
-router.get("/banners", controllerBanner.Listar);
-router.get("/empresas/destaques", controllerEmpresa.Destaques);
+router.get("/categorias", jwt.ValidateJWT, controllerCategoria.Listar);
+router.get("/banners", jwt.ValidateJWT, controllerBanner.Listar);
+router.get("/empresas/destaques", jwt.ValidateJWT, controllerEmpresa.Destaques);
 
 // Pedidos
-router.get("/pedidos", controllerPedido.Listar);
-router.get("/pedidos/:id_pedido", controllerPedido.ListarId);
-
+router.get("/pedidos", jwt.ValidateJWT, controllerPedido.Listar);
+router.get("/pedidos/:id_pedido", jwt.ValidateJWT, controllerPedido.ListarId);
 
 // Usuarios
-router.get("/usuarios/favoritos", controllerUsuario.Favoritos);
+router.get("/usuarios/favoritos", jwt.ValidateJWT, controllerUsuario.Favoritos);
 router.post("/usuarios/login", controllerUsuario.Login);
 router.post("/usuarios", controllerUsuario.Inserir);
 
@@ -27,5 +27,5 @@ export default router;
 
 
 
-//Anotações API - Aula 14(00:00) Iniciando estudos sobre segurança do app;  
+//Anotações API - Aula 15(14:49) Ajustando banco de dados
  
