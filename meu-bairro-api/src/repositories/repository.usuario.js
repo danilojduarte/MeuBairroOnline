@@ -16,12 +16,11 @@ where f.id_usuario = ?`;
 async function Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep){
 
   const sql = `insert into usuario (nome, email, senha, endereco, complemento, bairro, cidade, uf, cep,  dt_cadastro)
-  values (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP);
-select last_insert_rowid() as id_usuario`;
+  values(?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP) returning id_usuario`;
 
-  const usuario = await execute(sql, [nome, email, senha, endereco, complemento, bairro, cidade, uf, cep]);
+  let usuario = await execute(sql, [nome, email, senha, endereco, complemento, bairro, cidade, uf, cep]);
 
-  return usuario;
+  return usuario[0];
 }
 
 export default { Favoritos, Inserir };

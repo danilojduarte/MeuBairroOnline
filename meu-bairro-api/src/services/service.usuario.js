@@ -12,9 +12,9 @@ async function Favoritos(id_usuario){
 
 async function Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep){
 
-  const hashSenha = await bcrypt.hashSync(senha, 10);
+  const hashSenha = await bcrypt.hash(senha, 10);
   
-  const usuario = await repositoryUsuario.Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep);
+  const usuario = await repositoryUsuario.Inserir(nome, email, hashSenha, endereco, complemento, bairro, cidade, uf, cep);
 
   return usuario;
 }
