@@ -21,11 +21,12 @@ router.get("/pedidos/:id_pedido", jwt.ValidateJWT, controllerPedido.ListarId);
 router.get("/usuarios/favoritos", jwt.ValidateJWT, controllerUsuario.Favoritos);
 router.post("/usuarios/login", controllerUsuario.Login);
 router.post("/usuarios", controllerUsuario.Inserir);
+router.get("/usuarios/perfil", jwt.ValidateJWT, controllerUsuario.Perfil);
 
 
 export default router;
 
 
 
-//Anotações API - Aula 15(14:49) Ajustando banco de dados
+//Anotações API - Aula 16(15:19) Inciando routes para consulta de lojas
  

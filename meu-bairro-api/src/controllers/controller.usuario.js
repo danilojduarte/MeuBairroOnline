@@ -1,10 +1,9 @@
-import servicesUsuario from "../services/service.usuario.js";
-import jwt from "../token.js";
+import serviceUsuario from "../services/service.usuario.js";
 
 async function Favoritos(req, res) {
   try {
-    const id_usuario = 1;
-    const favoritos = await servicesUsuario.Favoritos(id_usuario);
+    const id_usuario = req.id_usuario;
+    const favoritos = await serviceUsuario.Favoritos(id_usuario);
 
     res.status(200).json(favoritos);
   } catch (error) {
@@ -16,18 +15,13 @@ async function Login(req, res) {
 
   const {email, senha} = req.body;
 
-  if (email == "teste@teste.com" && senha == "12345") {
-    res.status(200).json({
-      id_usuario: 7,
-      email:"teste@teste.com",
-      nome: "Danilo Duart",
-      inst: "@danilojduare",
-      token: jwt.CreateJWT(123),
-  });
-} else {
-  res.status(401).json({error: "Email ou senha inválidos"});
+  const usuario = await serviceUsuario.Login(email, senha);
 
-}
+  if (usuario.length === 0) 
+    res.status(401).json({error: "Usuário ou senha inválidos"});
+ else 
+    res.status(200).json(usuario);
+
 }
 
 async function Inserir(req, res){
@@ -36,9 +30,7 @@ async function Inserir(req, res){
 
       const {nome, email, senha, endereco, complemento, bairro, cidade, uf, cep} = req.body;
 
-      const usuario = await servicesUsuario.Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep);
-
-      usuario.token = jwt.CreateJWT(usuario.id_usuario);
+      const usuario = await serviceUsuario.Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep);
 
       res.status(201).json(usuario);  
     } catch (error) {
@@ -46,5 +38,16 @@ async function Inserir(req, res){
     }
 }
 
+async function Perfil(req, res) {
+  try {
+    const id_usuario = req.id_usuario;
+    const favoritos = await serviceUsuario.Perfil(id_usuario);
 
-export default {Favoritos, Login, Inserir};
+    res.status(200).json(favoritos);
+  } catch (error) {
+    res.status(500).json({error});
+  }
+};
+
+
+export default {Favoritos, Login, Inserir, Perfil};
