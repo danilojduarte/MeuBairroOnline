@@ -1,4 +1,5 @@
 import repositoryUsuario from "../repositories/repository.usuario.js";
+import bcrypt from "bcrypt";
 
 
 
@@ -10,6 +11,8 @@ async function Favoritos(id_usuario){
 }
 
 async function Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep){
+
+  const hashSenha = await bcrypt.hashSync(senha, 10);
   
   const usuario = await repositoryUsuario.Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep);
 
