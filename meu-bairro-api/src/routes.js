@@ -8,10 +8,14 @@ import jwt from "./token.js";
 
 const router = Router();
 
-// Empresas
+
 router.get("/categorias", jwt.ValidateJWT, controllerCategoria.Listar);
 router.get("/banners", jwt.ValidateJWT, controllerBanner.Listar);
+
+// Empresas
 router.get("/empresas/destaques", jwt.ValidateJWT, controllerEmpresa.Destaques);
+router.get("/empresas", jwt.ValidateJWT, controllerEmpresa.Listar);
+
 
 // Pedidos
 router.get("/pedidos", jwt.ValidateJWT, controllerPedido.Listar);

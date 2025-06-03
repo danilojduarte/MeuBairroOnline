@@ -1,11 +1,11 @@
-import servicesEmpresas from "../services/service.empresa.js";
+import serviceEmpresas from "../services/service.empresa.js";
 
 async function Destaques(req, res) {
   try {
 
     const id_usuario = req.id_usuario;
 
-    const empresas = await servicesEmpresas.Destaques();
+    const empresas = await servicesEmpresas.Destaques(id_usuario);
 
     res.status(200).json(empresas);
   } catch (error) {
@@ -13,4 +13,16 @@ async function Destaques(req, res) {
   }
 };
 
-export default {Destaques};
+async function Listar(req, res) {
+  try {
+    const id_usuario = req.id_usuario;
+    const busca = req.query.busca;
+    const empresas = await serviceEmpresas.Listar(id_usuario, busca);
+
+    res.status(200).json(empresas);
+  } catch (error) {
+    res.status(500).json({error});
+  }
+};
+
+export default {Destaques, Listar};
