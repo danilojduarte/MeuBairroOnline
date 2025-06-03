@@ -15,6 +15,9 @@ router.get("/banners", jwt.ValidateJWT, controllerBanner.Listar);
 // Empresas
 router.get("/empresas/destaques", jwt.ValidateJWT, controllerEmpresa.Destaques);
 router.get("/empresas", jwt.ValidateJWT, controllerEmpresa.Listar);
+router.post("/empresas/:id_empresa/favoritos", jwt.ValidateJWT, controllerEmpresa.InserirFavorito);
+router.delete("/empresas/:id_empresa/favoritos", jwt.ValidateJWT, controllerEmpresa.ExcluirFavorito);
+// router.get("/empresas/:id_empresa/cardapio", jwt.ValidateJWT, controllerEmpresa.Cardapio);
 
 
 // Pedidos
@@ -32,5 +35,5 @@ export default router;
 
 
 
-//Anotações API - Aula 16(15:19) Inciando routes para consulta de lojas
+//Anotações API - Aula 16(55:08) Rotas de cardapio;
  
