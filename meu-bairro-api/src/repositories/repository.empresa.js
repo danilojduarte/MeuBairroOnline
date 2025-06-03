@@ -1,7 +1,7 @@
 import { execute } from "../database/sqlite.js";
 
 
-async function Destaques() {
+async function Destaques(id_usuario) {
 
   const sql = `select e.*, 'N' as favorito
 from destaque d
