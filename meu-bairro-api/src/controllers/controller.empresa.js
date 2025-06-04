@@ -48,4 +48,33 @@ async function ExcluirFavorito(req, res) {
   }
 };
 
-export default {Destaques, Listar, InserirFavorito, ExcluirFavorito};
+async function Cardapio(req, res) {
+  try {
+    const id_usuario = req.id_usuario;
+    const id_empresa = req.params.id_empresa;
+    const empresas = await serviceEmpresa.Cardapio(id_usuario, id_empresa);
+
+    res.status(200).json(empresas);
+  } catch (error) {
+    res.status(500).json({error});
+  }
+};
+
+async function ListarProdutoId(req, res) {
+  try {
+    const id_empresa = req.params.id_empresa;
+    const id_produto = req.params.id_produto;
+    const produto = await serviceEmpresa.ListarProdutoId(id_empresa, id_produto);
+
+    res.status(200).json(produto);
+  } catch (error) {
+    res.status(500).json({error});
+  }
+};
+
+
+
+
+
+
+export default {Destaques, Listar, InserirFavorito, ExcluirFavorito, Cardapio, ListarProdutoId};

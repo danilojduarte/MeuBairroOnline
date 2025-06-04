@@ -18,11 +18,14 @@ router.get("/empresas", jwt.ValidateJWT, controllerEmpresa.Listar);
 router.post("/empresas/:id_empresa/favoritos", jwt.ValidateJWT, controllerEmpresa.InserirFavorito);
 router.delete("/empresas/:id_empresa/favoritos", jwt.ValidateJWT, controllerEmpresa.ExcluirFavorito);
 router.get("/empresas/:id_empresa/cardapio", jwt.ValidateJWT, controllerEmpresa.Cardapio);
+router.get("/empresas/:id_empresa/produtos/:id_produto", jwt.ValidateJWT, controllerEmpresa.ListarProdutoId);
 
 
 // Pedidos
 router.get("/pedidos", jwt.ValidateJWT, controllerPedido.Listar);
 router.get("/pedidos/:id_pedido", jwt.ValidateJWT, controllerPedido.ListarId);
+router.post("/pedidos", jwt.ValidateJWT, controllerPedido.Inserir);
+
 
 // Usuarios
 router.get("/usuarios/favoritos", jwt.ValidateJWT, controllerUsuario.Favoritos);
