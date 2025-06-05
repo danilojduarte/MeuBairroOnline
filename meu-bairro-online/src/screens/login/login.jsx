@@ -1,19 +1,34 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Alert } from "react-native";
 import { styles } from "./login.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 import { useState } from "react";
+import api from "../../constants/api.js";
 
 function Login(props) {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
-    function ProcessarLogin() {
-        console.log(email, senha);
-    }
 
+    async function ProcessarLogin() {
+      try {
+        const response = await api.post("/usuarios/login", {
+            email,
+            senha
+        });
+        
+        console.log(response.data);
+      } catch (error) {
+        // console.log(error);
+        if (error.response?.data.error)
+            Alert.alert(error.response.data.error);
+        else
+            Alert.alert("Erro ao acessar a API, tente novamente mais tarde.");
+      }
+
+    }  
     return <View style={styles.container}>
         <Header texto={email} />
 

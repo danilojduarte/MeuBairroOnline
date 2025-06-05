@@ -7,11 +7,10 @@ function TextBox(props) {
         {
             props.label && <Text style={styles.label}>{props.label}</Text>
         }
-        
         <TextInput style={styles.input}
             placeholder={props.placeholder}
             secureTextEntry={props.isPassword}
-            function onChangeText={(texto) => props.onChangeText(texto)}
+            onChangeText={(texto) => props.onChangeText(texto)}
             value={props.value}
         />
     </>
