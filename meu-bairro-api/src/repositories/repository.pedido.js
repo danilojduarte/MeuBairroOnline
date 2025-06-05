@@ -52,10 +52,17 @@ async function Inserir(id_usuario, dados) {
 
 
   //Dados do item
+  dados.itens.map(async (item) => {
+    sql = `insert into pedido_item(id_pedido, id_produto, obs, qtd, vl_unitario, vl_total)
+    values(?, ?, ?, ?, ?, ?)`
+
+      await execute(sql, [id_pedido, item.id_produto, item.obs, item.qtd, 
+        item.vl_unitario, item.vl_total]);
+
+  });
+
   
   return pedido[0];
 }
-
-
 
 export default { Listar, ListarId, Inserir };
