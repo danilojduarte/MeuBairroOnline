@@ -38,5 +38,5 @@ export default router;
 
 
 
-//Anotações API - Aula 18(34:40) Configurar login e senha;
+//Anotações API - Aula 18(01:02:03) Salvar dados no ato do login;
  
