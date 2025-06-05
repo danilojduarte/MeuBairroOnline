@@ -11,5 +11,8 @@ export const styles = {
         color: "white",
         padding: 14,
         textAlign: "center"
+    },
+    loading:{
+        opacity: 0.5,
     }
 }

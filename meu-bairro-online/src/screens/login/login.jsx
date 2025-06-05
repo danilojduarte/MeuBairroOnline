@@ -10,14 +10,19 @@ function Login(props) {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [loading, setLoading] = useState(false);
 
 
     async function ProcessarLogin() {
-        
+
+        console.log("-->", senha);
+
       try {
+        setLoading(true);
         const response = await api.post("/usuarios/login", {email, senha});
         Alert.alert("Sucesso");
       } catch (error) {
+        setLoading(false);
         if (error.response?.data.error)
             Alert.alert(error.response.data.error);
         else
@@ -42,7 +47,8 @@ function Login(props) {
             </View>
 
             <View style={styles.form}>
-                <Button texto="Acessar" onPress={ProcessarLogin} />
+                <Button texto="Acessar" 
+                onPress={ProcessarLogin} isLoading={loading} />
             </View>
         </View>
 
