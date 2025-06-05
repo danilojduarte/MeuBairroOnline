@@ -13,22 +13,18 @@ function Login(props) {
 
 
     async function ProcessarLogin() {
-      try {
-        const response = await api.post("/usuarios/login", {
-            email,
-            senha
-        });
         
-        console.log(response.data);
+      try {
+        const response = await api.post("/usuarios/login", {email, senha});
+        Alert.alert("Sucesso");
       } catch (error) {
-        // console.log(error);
         if (error.response?.data.error)
             Alert.alert(error.response.data.error);
         else
-            Alert.alert("Erro ao acessar a API, tente novamente mais tarde.");
+            Alert.alert("Ocorreu um erro. Tente novamente mais tarde.");
       }
-
     }  
+
     return <View style={styles.container}>
         <Header texto={email} />
 
@@ -40,7 +36,7 @@ function Login(props) {
             </View>
 
             <View style={styles.form}>
-                <TextBox label="Senha" isPassword={true}
+                <TextBox label="Senha" isPassword={false}
                     onChangeText={(texto) => setSenha(texto)}
                     value={senha} />
             </View>

@@ -38,5 +38,5 @@ export default router;
 
 
 
-//Anotações API - Aula 16(55:08) Rotas da API concluídas;
+//Anotações API - Aula 18(34:40) Configurar login e senha;
  
