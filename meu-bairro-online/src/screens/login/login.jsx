@@ -5,6 +5,7 @@ import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 import { useState } from "react";
 import api from "../../constants/api.js";
+import { SaveUsuario, LoadUsuario } from "../../storage/storage.usuario.js";
 
 function Login(props) {
 

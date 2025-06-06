@@ -8,4 +8,15 @@ async function SalveUsuario(usuario) {
   }
 }
 
-export {SalveUsuario}
+async function LoadUsuario() {
+  try {
+    const storage = await AsyncStorage.getItem("usuario");
+
+    return storage ? JSON.parse(storage) : {};
+
+  } catch (error) {
+    console.log("Erro ao carregar storage");
+  }
+}
+
+export {SalveUsuario, LoadUsuario}
