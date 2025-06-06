@@ -15,8 +15,6 @@ function Login(props) {
 
     async function ProcessarLogin() {
 
-        console.log("-->", senha);
-
       try {
         setLoading(true);
         const response = await api.post("/usuarios/login", {email, senha});
