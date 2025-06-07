@@ -1,12 +1,8 @@
-import RoutesOpen from "./src/routesOpen.js";
-import RoutesAuth from "./src/routesAuth.js";
+import Routes from "./src/routes.js";
 
-
-const isUserAuth = false;
 
 export default function App() {
-  return isUserAuth ? <RoutesAuth /> : <RoutesOpen />
+  return <Routes />;
 }
 
-
-// Anotacções Projeto = Aula 11(00:00) - Iniciando aula 11 - Criando API!
+// Anotacções Projeto = Aula 19(29:09) - Implementando o Context API!

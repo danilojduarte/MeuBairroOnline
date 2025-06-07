@@ -1,12 +1,13 @@
+import RoutesOpen from "./routesOpen.js";
+import RoutesAuth from "./routesAuth.js";
 
-
-function Routes(){
-  return (
-    <div>
-      <h1>Welcome to Meu Bairro Online</h1>
-      <p>This is the main page of the application.</p>
-    </div>
-  );
+const user = {
+  id_usuario: 1,
 }
 
+function Routes(){
+ return isUserAuth ? <RoutesAuth /> : <RoutesOpen />
+
+
+}
 export default Routes;
