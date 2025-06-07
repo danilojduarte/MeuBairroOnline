@@ -1,14 +1,11 @@
-import Routes from "./src/routes";
+import RoutesOpen from "./src/routesOpen.js";
 import RoutesAuth from "./src/routesAuth.js";
 
 
 const isUserAuth = false;
 
 export default function App() {
-  return isUserAuth ? <RoutesAuth /> : <Routes />
- 
-    
-  
+  return isUserAuth ? <RoutesAuth /> : <RoutesOpen />
 }
 
 
