@@ -6,6 +6,8 @@ import Button from "../../components/button/button.jsx";
 import { useEffect, useState } from "react";
 import api from "../../constants/api.js";
 import { SaveUsuario, LoadUsuario } from "../../storage/storage.usuario.js";
+import { AuthContext } from "../../contexts/auth.js";
+import { useContext } from "react";
 
 function Login(props) {
 
@@ -14,16 +16,19 @@ function Login(props) {
     const [loading, setLoading] = useState(false);
 
 
+    const {user, setUser} = useContext(AuthContext);
+
     async function ProcessarLogin() {
 
         try {
             setLoading(true);
             const response = await api.post("/usuarios/login", { email, senha });
 
-            //Salvar dados do usuario no storage local
-            await SaveUsuario(response.data);
+            if (response.data){
+                await SaveUsuario(response.data);
+                setUser(response.data);
+            }
 
-            Alert.alert("Sucesso");
         } catch (error) {
             setLoading(false);
             await SaveUsuario({});
@@ -39,7 +44,7 @@ function Login(props) {
             const usuario = await LoadUsuario();
 
             if (usuario.token)
-                Alert.alert("Usuário já logado, pular tela de login");
+                setUser(usuario);
 
         } catch (error) {
         }
