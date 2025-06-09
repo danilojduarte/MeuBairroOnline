@@ -1,11 +1,12 @@
 import RoutesOpen from "./routesOpen.js";
 import RoutesAuth from "./routesAuth.js";
-
-const user = {
-  id_usuario: 1,
-}
+import { useContext } from "react";
+import { AuthContext } from "./contexts/auth.js";
 
 function Routes(){
+
+  const { user } = useContext(AuthContext);
+
  return user.id_usuario ? <RoutesAuth /> : <RoutesOpen />
 
 
