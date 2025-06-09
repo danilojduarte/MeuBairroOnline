@@ -6,7 +6,7 @@ const user = {
 }
 
 function Routes(){
- return isUserAuth ? <RoutesAuth /> : <RoutesOpen />
+ return user.id_usuario ? <RoutesAuth /> : <RoutesOpen />
 
 
 }
