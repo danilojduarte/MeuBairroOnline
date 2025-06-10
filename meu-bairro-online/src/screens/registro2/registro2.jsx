@@ -33,6 +33,12 @@ function Registro2(props) {
                 nome, email, senha, endereco,
                 complemento, bairro, cidade, uf, cep
             });
+
+            if(response.data) {
+                await SaveUsuario(response.data);
+                setUser(response.data);
+            }
+
             Alert.alert("Conta criada com sucesso!");
           } catch (error) {
             setLoading(false);
