@@ -1,10 +1,13 @@
-import { View, ScrollView, Alert } from "react-native";
+import { View, ScrollView, Alert, useColorScheme } from "react-native";
 import { styles } from "./registro2.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import api from "../../constants/api.js";
+import { SaveUsuario } from "../../storage/storage.usuario.js";
+import { AuthContext }  from "../../contexts/auth.js";
+
 
 
 function Registro2(props) {
@@ -13,7 +16,7 @@ function Registro2(props) {
     const email= props.route.params.email;
     const senha = props.route.params.senha; 
 
-    console.log(nome, email, senha);
+    const {user, setUser} = useContext(AuthContext);
 
     const [endereco, setEndereco] = useState("");
     const [complemento, setComplemento] = useState("");
@@ -36,6 +39,7 @@ function Registro2(props) {
 
             if(response.data) {
                 await SaveUsuario(response.data);
+
                 setUser(response.data);
             }
 
