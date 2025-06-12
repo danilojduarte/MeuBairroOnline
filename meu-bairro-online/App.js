@@ -7,4 +7,4 @@ export default function App() {
   </AuthProvider>
 }
 
-// Anotacções Projeto = Aula 20(08:15) - Carregando dados na tela principal;
+// Anotacções Projeto = Aula 20(20:48) - Validação via token;
