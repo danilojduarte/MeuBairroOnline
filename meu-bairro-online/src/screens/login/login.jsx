@@ -25,6 +25,7 @@ function Login(props) {
             const response = await api.post("/usuarios/login", { email, senha });
 
             if (response.data){
+                api.defaults.headers.cammon['Authorization'] = "Banner " + response.data.token;
                 await SaveUsuario(response.data);
                 setUser(response.data);
             }
@@ -43,8 +44,10 @@ function Login(props) {
         try {
             const usuario = await LoadUsuario();
 
-            if (usuario.token)
+            if (usuario.token) {
+                api.defaults.headers.cammon['Authorization'] = "Banner " + usuario.token;
                 setUser(usuario);
+            }
 
         } catch (error) {
         }
