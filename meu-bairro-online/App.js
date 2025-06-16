@@ -7,4 +7,4 @@ export default function App() {
   </AuthProvider>
 }
 
-// Anotacções Projeto = Aula 20(35:08) - Validação section categorias;
+// Anotacções Projeto = Aula 20(00:00) - Aula Concluída;

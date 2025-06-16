@@ -5,6 +5,7 @@ import logo from "../assets/logo-app.png";
 import logo2 from "../assets/logo-app-copia.png";
 import cart from "../assets/cart.png";
 import favoritoFull from "../assets/favorito-full.png";
+import favorito from "../assets/favorito.png";
 import empty from "../assets/empty.png";
 import endereco from "../assets/endereco.png";
 import more from "../assets/expandir.png";
@@ -27,6 +28,7 @@ export default {
   logo,
   cart,
   favoritoFull,
+  favorito,
   logo2,
   empty,
   endereco,

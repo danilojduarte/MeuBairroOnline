@@ -5,7 +5,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import TextBox from "../../components/textbox/textbox.jsx";
 import { useEffect, useState } from "react";
 import Categorias from "../../components/categorias/categorias.jsx";
-import { restaurantes } from "../../constants/dados.js";
 import Banners from "../../components/banners/banners.jsx";
 import Restaurante from "../../components/restaurante/restaurante.jsx";
 import api from "../../constants/api.js";
@@ -48,6 +47,25 @@ function AbaHome(props) {
         }
     }
 
+  async function LoadDestaque() {
+
+        try {
+            const response = await api.get("/empresas/destaques");
+            
+            if (response.data){
+              setRestaurantes(response.data);                
+            }
+
+        } catch (error) {
+            setLoading(false);
+            await SaveUsuario({});
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
   function OpenCardapio() {
 props.navigation.navigate("cardapio")  
     }
@@ -56,10 +74,12 @@ props.navigation.navigate("cardapio")
   const [busca, setBusca] = useState("");
   const [categorias, setCategorias] = useState([]);
   const [banners, setBanner] = useState([]);
+  const [restaurantes, setRestaurantes] = useState([]);
 
   useEffect(() => {
     LoadCategory();
     LoadBanner();
+    LoadDestaque();
   }, []);
 
   return (
@@ -95,10 +115,10 @@ props.navigation.navigate("cardapio")
           return (
             <View key={indice}>
               <Restaurante
-                logotipo={restaurante.logotipo}
+                logotipo={restaurante.icone}
                 nome={restaurante.nome}
                 endereco={restaurante.endereco}
-                icone={icons.favoritoFull}
+                icone={icons.favorito == "S" ? icons.favoritoFull : icons.favorito}
                 onPress={OpenCardapio}
               />
             </View>
