@@ -1,3 +1,4 @@
+import { Colors } from "react-native/Libraries/NewAppScreen";
 import { COLORS, FONT_SIZE } from "../../constants/themes";
 
 export const styles = {
@@ -25,5 +26,10 @@ export const styles = {
   busca:{
     marginBottom: 10,
     marginTop: 20,
+  },
+  destaques: {
+    colors: COLORS.dark_gray,
+    fontWeight: "bold",
+    marginTop: 10,
   },
 };

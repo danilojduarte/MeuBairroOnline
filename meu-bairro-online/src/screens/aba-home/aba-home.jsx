@@ -81,8 +81,15 @@ props.navigation.navigate("cardapio")
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
+
         <Categorias dados={categorias} />
+
         <Banners dados={banners} />
+
+        <View>
+          <Text style={styles.destaques}>Destaques</Text>
+        </View>
+
 
         {restaurantes.map((restaurante, indice) => {
           return (
