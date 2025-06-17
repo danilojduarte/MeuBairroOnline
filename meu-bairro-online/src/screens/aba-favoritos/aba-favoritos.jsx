@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { FlatList, Image, View, Text } from "react-native";
-import { restaurantes } from "../../constants/dados";
 import Restaurante from "../../components/restaurante/restaurante";
 import icons from "../../constants/icons";
 import { styles } from "./aba-favoritos.style";
 
 function AbaFavoritos() {
+
+  const [restaurantes, setRestaurantes] = useState([]);
+
+
+  
+
   return (
     <View style={styles.container}>
       <FlatList

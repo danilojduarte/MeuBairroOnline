@@ -7,4 +7,4 @@ export default function App() {
   </AuthProvider>
 }
 
-// Anotacções Projeto = Aula 20(00:00) - Aula Concluída;
+// Anotacções Projeto = Aula 21(14:03) - Tratamento dos favoritos;
