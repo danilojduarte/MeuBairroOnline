@@ -8,6 +8,7 @@ import jwt from "./token.js";
 
 const router = Router();
 
+
 router.get("/categorias", jwt.ValidateJWT, controllerCategoria.Listar);
 router.get("/banners", jwt.ValidateJWT, controllerBanner.Listar);
 
@@ -32,4 +33,10 @@ router.post("/usuarios/login", controllerUsuario.Login);
 router.post("/usuarios", controllerUsuario.Inserir);
 router.get("/usuarios/perfil", jwt.ValidateJWT, controllerUsuario.Perfil);
 
+
 export default router;
+
+
+
+//Anotações API - Aula 19(25:00) Iniciando aula 19 - Dominando o conceito de Context API;
+ 
