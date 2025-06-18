@@ -1,13 +1,10 @@
 import repositoryBanner from "../repositories/repository.banner.js";
 
+async function Listar() {
 
+    const banners = await repositoryBanner.Listar();
 
-async function Listar(){
-  const banners = await repositoryBanner.Listar();
-
-  return banners;
-
-  
+    return banners;
 }
 
-export default {Listar};
+export default { Listar };
