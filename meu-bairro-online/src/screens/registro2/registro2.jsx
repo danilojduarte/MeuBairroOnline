@@ -38,7 +38,7 @@ function Registro2(props) {
             });
 
             if(response.data) {
-                api.defaults.headers.cammon['Authorization'] = "Banner " + response.data.token;
+                api.defaults.headers.common['Authorization'] = "Bearer " + response.data.token;
                 await SaveUsuario(response.data);
 
                 setUser(response.data);
