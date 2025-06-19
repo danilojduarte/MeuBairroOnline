@@ -1,4 +1,4 @@
-import { COLORS, FONT_SIZE } from "../../meu-bairro-online/src/constants/themes";
+import { COLORS, FONT_SIZE } from "../../constants/themes";
 
 export const styles = {
   container: {
