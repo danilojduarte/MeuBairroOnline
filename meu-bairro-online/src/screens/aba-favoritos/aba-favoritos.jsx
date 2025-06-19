@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Alert, FlatList, Image, Text, View } from "react-native";
-import Restaurante from "../../components/restaurante/restaurante.jsx";
-import icons from "../../constants/icons.js";
+import Restaurante from "../../meu-bairro-online/src/components/restaurante/restaurante.jsx";
+import icons from "../../meu-bairro-online/src/constants/icons.js";
 import { styles } from "./aba-favoritos.style.js";
-import api from "../../constants/api.js";
+import api from "../../meu-bairro-online/src/constants/api.js";
 
 function AbaFavoritos(props) {
 
