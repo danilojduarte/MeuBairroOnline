@@ -1,11 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Principal from "../../screens/principal/principal.js";
-import Cardapio from "../../screens/cardapio/cardapio.js"
-import Busca from "../../screens/busca/busca.js";
-import DetalheProduto from "../../screens/detalhe-produto/detalhe-produto.js";
-import DetalhePedido from "../../screens/detalhe-pedido/detalhe-pedido.js";
-import Checkout from "../../screens/checkout/checkout.js";
+import Principal from "./screens/principal/principal.jsx";
+import Cardapio from "./screens/cardapio/cardapio.jsx"
+import Busca from "./screens/busca/busca.jsx";
+import DetalheProduto from "./screens/detalhe-produto/detalhe-produto.jsx";
+import DetalhePedido from "./screens/detalhe-pedido/detalhe-pedido.jsx";
+import Checkout from "./screens/checkout/checkout.jsx";
 import { Text, TouchableOpacity } from "react-native";
 import { COLORS } from "./constants/themes.js";
 

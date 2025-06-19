@@ -1,6 +1,6 @@
-import Login from "../../screens/login/login.js";
-import Registro from "../../screens/registro/registro.js";
-import Registro2 from "../../screens/registro2/registro2.js";
+import Login from "./screens/login/login.jsx";
+import Registro from "./screens/registro/registro.jsx";
+import Registro2 from "./screens/registro2/registro2.jsx";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
