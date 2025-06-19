@@ -1,38 +1,81 @@
-import { FlatList, Image, View, Text } from "react-native";
-import { restaurantes } from "../../constants/dados";
-import Restaurante from "../../components/restaurante/restaurante";
-import icons from "../../constants/icons";
-import { styles } from "./aba-favoritos.style";
+import { useEffect, useState } from "react";
+import { Alert, FlatList, Image, Text, View } from "react-native";
+import Restaurante from "../../meu-bairro-online/src/components/restaurante/restaurante.jsx";
+import icons from "../../meu-bairro-online/src/constants/icons.js";
+import { styles } from "./aba-favoritos.style.js";
+import api from "../../meu-bairro-online/src/constants/api.js";
 
-function AbaFavoritos() {
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={restaurantes}
-        keyExtractor={(restaurantes) => restaurantes.id}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => {
-          return (
-            <Restaurante
-              nome={item.nome}
-              endereco={item.endereco}
-              logotipo={item.logotipo}
-              icone={icons.remove}
-            />
-          );
-        }}
-        contentContainerStyle={styles.containerList}
-        ListEmptyComponent={() => {
-          return (
-            <View style={styles.empty}>
-              <Image source={icons.empty} />
-              <Text style={styles.emptyText}>Nenhum Favorito Encontrado</Text>
-            </View>
-          );
-        }}
-      />
+function AbaFavoritos(props) {
+
+    const [restaurantes, setRestaurantes] = useState([]);
+
+    async function LoadFavoritos() {
+
+        try {
+            const response = await api.get("/usuarios/favoritos");
+
+            if (response.data) {
+                setRestaurantes(response.data);
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
+    async function RemoveFavorito(id) {
+
+        try {
+            const response = await api.delete("/empresas/" + id + "/favoritos");
+
+            if (response.data) {
+                LoadFavoritos();
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
+    function OpenCardapio(id) {
+        props.navigation.navigate("cardapio", {
+            id_empresa: id
+        });
+    }
+
+    useEffect(() => {
+        LoadFavoritos();
+    }, []);
+
+    return <View style={styles.container}>
+        <FlatList data={restaurantes}
+            keyExtractor={(restaurante) => restaurante.id}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) => {
+                return <Restaurante id_empresa={item.id_empresa}
+                    nome={item.nome}
+                    endereco={item.endereco}
+                    logotipo={item.icone}
+                    icone={icons.remove}
+                    onPress={OpenCardapio}
+                    onClickIcon={RemoveFavorito}
+                />
+            }}
+
+            contentContainerStyle={styles.containerList}
+
+            ListEmptyComponent={() => {
+                return <View style={styles.empty}>
+                    <Image source={icons.empty} />
+                    <Text style={styles.emptyText}>Nenhum favorito encontrado</Text>
+                </View>
+            }}
+        />
     </View>
-  );
 }
 
 export default AbaFavoritos;

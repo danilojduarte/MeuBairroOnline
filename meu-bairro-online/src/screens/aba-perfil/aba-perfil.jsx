@@ -1,8 +1,21 @@
 import { TouchableOpacity, View, Image, Text } from "react-native";
 import { styles } from "./aba-perfil.style";
 import icons from "../../constants/icons";
+import { SaveUsuario } from "../../storage/storage.usuario";
+import { AuthContext } from "../../contexts/auth";
+import { useContext } from "react";
+
 
 function AbaPerfil() {
+
+  const {setUser} = useContext(AuthContext);
+
+  function Logout(){
+    SaveUsuario({});
+    setUser({});
+  }
+
+
   return(
     <View style={styles.container}>
 
@@ -38,7 +51,7 @@ function AbaPerfil() {
 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={Logout}>
         <View style={styles.containerIcone}>
           <Image source={icons.logout} style={styles.icone} />
         </View>
