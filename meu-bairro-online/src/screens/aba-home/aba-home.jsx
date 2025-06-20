@@ -1,4 +1,4 @@
-import { Image, View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { Alert, Image, View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./aba-home.style.js";
 import icons from "../../constants/icons.js";
 import { SafeAreaView } from "react-native-safe-area-context";
