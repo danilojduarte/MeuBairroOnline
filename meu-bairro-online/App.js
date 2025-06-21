@@ -8,4 +8,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula (00:00) - Verificar instalação do express no arquivo 'index.js'!
+// Anotacções Projeto = Aula 21(28:35) - Ajustando validações de favoritos!
