@@ -110,11 +110,11 @@ props.navigation.navigate("cardapio")
           <Text style={styles.destaques}>Destaques</Text>
         </View>
 
-
-        {restaurantes.map((restaurante, indice) => {
+{/*   ALTERANDO INDICE PARA INDEX */}
+        {restaurantes.map((restaurante, index) => {
           return (
-            <View key={indice}>
-              <Restaurante
+            <View key={index}>
+              <Restaurante id_empresa={restaurante.id_empresa}
                 logotipo={restaurante.icone}
                 nome={restaurante.nome}
                 endereco={restaurante.endereco}
