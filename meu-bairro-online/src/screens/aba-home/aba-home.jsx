@@ -70,6 +70,42 @@ function AbaHome(props) {
 props.navigation.navigate("cardapio")  
     }
 
+  async function RemoveFavorito(id) {
+
+    Alert.alert("Remover " + id);
+
+        try {
+            const response = await api.delete("/empresas/" + id + "/favoritos");
+
+            if (response.data) {
+                LoadDestaque();
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
+  async function AddFavorito(id) {
+
+
+        try {
+            const response = await api.post("/empresas/" + id + "/favoritos");
+
+            if (response.data) {
+                LoadDestaque();
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+  
+
   
   const [busca, setBusca] = useState("");
   const [categorias, setCategorias] = useState([]);
@@ -118,8 +154,9 @@ props.navigation.navigate("cardapio")
                 logotipo={restaurante.icone}
                 nome={restaurante.nome}
                 endereco={restaurante.endereco}
-                icone={icons.favorito == "S" ? icons.favoritoFull : icons.favorito}
+                icone={restaurante.favorito == "S" ? icons.favoritoFull : icons.favorito}
                 onPress={OpenCardapio}
+                onClickIcon={restaurante.favorito == "S" ? RemoveFavorito : AddFavorito}
               />
             </View>
           );
