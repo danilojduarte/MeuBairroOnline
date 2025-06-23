@@ -15,7 +15,7 @@ export const styles = {
     flex: 1,
     padding: 8,
   },
-  containervalor:{
+  containerValor:{
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 10,

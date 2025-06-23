@@ -8,4 +8,4 @@ export default function App() {
 }
 
 
-// Anotacções Projeto = Aula 21(28:35) - Ajustando validações de favoritos!
+// Anotacções Projeto = Aula 21(28:35) - Falta verfocar regostro, registro2!

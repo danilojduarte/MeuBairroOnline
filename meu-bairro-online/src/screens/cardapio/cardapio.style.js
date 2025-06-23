@@ -25,7 +25,7 @@ export const styles = {
     flexDirection: "row",
     padding: 10,
   },
-  favoritoFull: {
+  favorito: {
     width: 40,
     height: 40,
   },

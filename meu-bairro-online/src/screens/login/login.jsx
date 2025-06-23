@@ -24,12 +24,12 @@ function Login(props) {
             setLoading(true);
             const response = await api.post("/usuarios/login", { email, senha });
 
-            if (response.data){
+            if (response.data) {
+                //Salvar dados do usuario no storage local
                 api.defaults.headers.common['Authorization'] = "Bearer " + response.data.token;
                 await SaveUsuario(response.data);
                 setUser(response.data);
             }
-
         } catch (error) {
             setLoading(false);
             await SaveUsuario({});

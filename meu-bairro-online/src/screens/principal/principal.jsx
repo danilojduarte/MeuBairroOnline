@@ -1,8 +1,6 @@
 import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import icons from "../../constants/icons.js";
-
 import AbaHome from "../../screens/aba-home/aba-home.jsx";
 import AbaFavoritos from "../../screens/aba-favoritos/aba-favoritos.jsx";
 import AbaPedidos from "../../screens/aba-pedidos/aba-pedidos.jsx";
@@ -31,9 +29,7 @@ function Principal() {
         />
 
         <Tab.Screen
-          name="favoritos"
-          component={AbaFavoritos}
-          options={{
+          name="favoritos" component={AbaFavoritos} options={{
             title: "Favoritos",
             headerTitleAlign: "center",
             headerShadowVisible: false,
@@ -51,10 +47,8 @@ function Principal() {
         />
 
         <Tab.Screen
-          name="pedidos"
-          component={AbaPedidos}
-          options={{
-            title: "Meus Pedidos",
+          name="pedidos" component={AbaPedidos} options={{
+            title: "Pedidos",
             headerTitleAlign: "center",
             headerShadowVisible: false,
             // headerShown: false,

@@ -11,15 +11,14 @@ import api from "../../constants/api.js";
 
 function AbaHome(props) {
 
-  async function LoadCategory() {
+ async function LoadCategory() {
 
         try {
             const response = await api.get("/categorias");
-            
-            if (response.data){
-              setCategorias(response.data);                
-            }
 
+            if (response.data) {
+                setCategorias(response.data);
+            }
         } catch (error) {
             if (error.response?.data.error)
                 Alert.alert(error.response.data.error);
@@ -32,14 +31,11 @@ function AbaHome(props) {
 
         try {
             const response = await api.get("/banners");
-            
-            if (response.data){
-              setBanner(response.data);                
-            }
 
+            if (response.data) {
+                setBanner(response.data);
+            }
         } catch (error) {
-            setLoading(false);
-            await SaveUsuario({});
             if (error.response?.data.error)
                 Alert.alert(error.response.data.error);
             else
@@ -51,14 +47,11 @@ function AbaHome(props) {
 
         try {
             const response = await api.get("/empresas/destaques");
-            
-            if (response.data){
-              setRestaurantes(response.data);                
-            }
 
+            if (response.data) {
+                setRestaurantes(response.data);
+            }
         } catch (error) {
-            setLoading(false);
-            await SaveUsuario({});
             if (error.response?.data.error)
                 Alert.alert(error.response.data.error);
             else
@@ -66,13 +59,14 @@ function AbaHome(props) {
         }
     }
 
-  function OpenCardapio() {
-props.navigation.navigate("cardapio")  
+
+  function OpenCardapio(id) {
+        props.navigation.navigate("cardapio", {
+            id_empresa: id
+        });
     }
 
   async function RemoveFavorito(id) {
-
-    Alert.alert("Remover " + id);
 
         try {
             const response = await api.delete("/empresas/" + id + "/favoritos");
@@ -88,8 +82,7 @@ props.navigation.navigate("cardapio")
         }
     }
 
-  async function AddFavorito(id) {
-
+ async function AddFavorito(id) {
 
         try {
             const response = await api.post("/empresas/" + id + "/favoritos");
@@ -104,22 +97,27 @@ props.navigation.navigate("cardapio")
                 Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
         }
     }
+
+    function Search(termo) {
+        props.navigation.navigate("busca", {
+            busca: termo
+        });
+    }
   
 
   
   const [busca, setBusca] = useState("");
-  const [categorias, setCategorias] = useState([]);
-  const [banners, setBanner] = useState([]);
-  const [restaurantes, setRestaurantes] = useState([]);
+    const [categorias, setCategorias] = useState([]);
+    const [banners, setBanner] = useState([]);
+    const [restaurantes, setRestaurantes] = useState([]);
 
-  useEffect(() => {
-    LoadCategory();
-    LoadBanner();
-    LoadDestaque();
-  }, []);
+    useEffect(() => {
+        LoadCategory();
+        LoadBanner();
+        LoadDestaque();
+    }, []);
 
-  return (
-    <SafeAreaView style={styles.container}>
+  return <SafeAreaView style={styles.container}>
       <View style={styles.headerBar}>
         <Image source={icons.logo2} style={styles.logo} />
 
@@ -129,41 +127,41 @@ props.navigation.navigate("cardapio")
       </View>
 
       <View style={styles.busca}>
-        <TextBox
-          placeholder="O que você deseja hoje? "
-          onChangeText={(text) => setBusca(text)}
-          value={busca}
-        />
-      </View>
+            <TextBox placeholder="O que vamos pedir hoje?"
+                onChangeText={(texto) => setBusca(texto)}
+                value={busca}
+                returnKeyType="search"
+                onSubmit={Search} />
+        </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
 
-        <Categorias dados={categorias} />
+            <Categorias dados={categorias} />
 
-        <Banners dados={banners} />
+            <Banners dados={banners} />
 
-        <View>
-          <Text style={styles.destaques}>Destaques</Text>
-        </View>
-
-{/*   ALTERANDO INDICE PARA INDEX */}
-        {restaurantes.map((restaurante, index) => {
-          return (
-            <View key={index}>
-              <Restaurante id_empresa={restaurante.id_empresa}
-                logotipo={restaurante.icone}
-                nome={restaurante.nome}
-                endereco={restaurante.endereco}
-                icone={restaurante.favorito == "S" ? icons.favoritoFull : icons.favorito}
-                onPress={OpenCardapio}
-                onClickIcon={restaurante.favorito == "S" ? RemoveFavorito : AddFavorito}
-              />
+            <View>
+                <Text style={styles.destaques}>Destaques</Text>
             </View>
-          );
-        })}
-      </ScrollView>
+
+            {
+                restaurantes.map((restaurante, index) => {
+                    return <View key={index}>
+                        <Restaurante id_empresa={restaurante.id_empresa}
+                            logotipo={restaurante.icone}
+                            nome={restaurante.nome}
+                            endereco={restaurante.endereco}
+                            icone={restaurante.favorito == "S" ? icons.favoritoFull : icons.favorito}
+                            onPress={OpenCardapio}
+                            onClickIcon={restaurante.favorito == "S" ? RemoveFavorito : AddFavorito}
+                        />
+                    </View>
+                })
+            }
+
+        </ScrollView>
+
     </SafeAreaView>
-  );
 }
 
 export default AbaHome;

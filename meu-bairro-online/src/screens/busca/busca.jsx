@@ -1,38 +1,106 @@
-import { FlatList, Image, View, Text } from "react-native";
+import { FlatList, Image, View, Text, Alert } from "react-native";
 import { styles } from "./busca.style";
-import { restaurantes } from "../../constants/dados";
 import Restaurante from "../../components/restaurante/restaurante";
 import icons from "../../constants/icons";
+import api from "../../constants/api";
+import { useEffect, useState } from "react";
 
-function Busca(){
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={restaurantes}
-        keyExtractor={(restaurantes) => restaurantes.id}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => {
-          return (
-            <Restaurante
-              nome={item.nome}
-              endereco={item.endereco}
-              logotipo={item.logotipo}
-              icone={icons.favoritoFull}
-            />
-          );
-        }}
-        contentContainerStyle={styles.containerList}
-        ListEmptyComponent={() => {
-          return (
-            <View style={styles.empty}>
-              <Image source={icons.empty} />
-              <Text style={styles.emptyText}>Nenhum Favorito Encontrado</Text>
-            </View>
-          );
-        }}
-      />
+function Busca(props) {
+
+    const busca = props.route.params.busca;
+    const id_categoria = props.route.params.id_categoria;
+    const id_banner = props.route.params.id_banner;
+    const [restaurantes, setRestaurantes] = useState([]);
+
+    function OpenCardapio(id) {
+        props.navigation.navigate("cardapio", {
+            id_empresa: id
+        });
+    }
+
+    async function RemoveFavorito(id) {
+
+        try {
+            const response = await api.delete("/empresas/" + id + "/favoritos");
+
+            if (response.data) {
+                LoadSearch();
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
+    async function AddFavorito(id) {
+
+        try {
+            const response = await api.post("/empresas/" + id + "/favoritos");
+
+            if (response.data) {
+                LoadSearch();
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
+    async function LoadSearch() {
+
+        try {
+            const response = await api.get("/empresas", {
+                params: {
+                    busca: busca,
+                    id_categoria: id_categoria,
+                    id_banner: id_banner
+                }
+            });
+
+            if (response.data) {
+                setRestaurantes(response.data);
+            }
+        } catch (error) {
+            if (error.response?.data.error)
+                Alert.alert(error.response.data.error);
+            else
+                Alert.alert("Ocorreu um erro. Tente novamente mais tarde");
+        }
+    }
+
+    useEffect(() => {
+        LoadSearch();
+    }, []);
+
+    return <View style={styles.container}>
+        <FlatList data={restaurantes}
+            keyExtractor={(restaurante) => restaurante.id}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) => {
+                return <Restaurante id_empresa={item.id_empresa}
+                    logotipo={item.icone}
+                    nome={item.nome}
+                    endereco={item.endereco}
+                    icone={item.favorito == "S" ? icons.favoritoFull : icons.favorito}
+                    onPress={OpenCardapio}
+                    onClickIcon={item.favorito == "S" ? RemoveFavorito : AddFavorito}
+                />
+            }}
+
+            contentContainerStyle={styles.containerList}
+
+            ListEmptyComponent={() => {
+                return <View style={styles.empty}>
+                    <Image source={icons.empty} />
+                    <Text style={styles.emptyText}>Nenhum restaurante encontrado</Text>
+                </View>
+            }}
+        />
     </View>
-  );
 }
 
 export default Busca;

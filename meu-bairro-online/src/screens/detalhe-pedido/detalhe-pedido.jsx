@@ -9,19 +9,17 @@ function DetalhePedido(props) {
   return (
     <View style={styles.container}>
 
-      <FlatList
-        data={pedido.itens}
-        keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => {
-          return <Produto
-                key={item.idItem}
-                foto={item.foto}
-                nome={item.nome}
-                descricao={item.descricao}
-                valor={item.vlTotal} />
-        }}
-      />
+      <FlatList data={pedido.itens}
+            keyExtractor={(item) => item.idItem}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) => {
+                return <Produto key={item.idItem}
+                    foto={item.foto}
+                    nome={item.nome}
+                    descricao={item.descricao}
+                    valor={item.vlTotal} />
+            }}
+        />
 
         <View>
 
