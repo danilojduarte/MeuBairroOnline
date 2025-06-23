@@ -37,6 +37,7 @@ function Principal() {
             title: "Favoritos",
             headerTitleAlign: "center",
             headerShadowVisible: false,
+            unmountOnbur: true,
             // headerShown: false,
             tabBarIcon: ({ focused }) => {
               return (
