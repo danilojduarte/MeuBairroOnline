@@ -67,15 +67,15 @@ function AbaFavoritos(props) {
             }}
 
             contentContainerStyle={styles.containerList}
-            
-                        ListEmptyComponent={() => {
-                            return <View style={styles.empty}>
-                                <Image source={icons.empty} />
-                                <Text style={styles.emptyText}>Nenhum favorito encontrado</Text>
-                            </View>
-                        }}
-                    />
+
+            ListEmptyComponent={() => {
+                return <View style={styles.empty}>
+                    <Image source={icons.empty} />
+                    <Text style={styles.emptyText}>Nenhum favorito encontrado</Text>
                 </View>
-            }
-            
-            export default AbaFavoritos;
+            }}
+        />
+    </View>
+}
+
+export default AbaFavoritos;

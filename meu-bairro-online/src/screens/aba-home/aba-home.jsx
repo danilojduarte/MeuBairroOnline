@@ -11,7 +11,7 @@ import api from "../../constants/api.js";
 
 function AbaHome(props) {
 
- async function LoadCategory() {
+    async function LoadCategory() {
 
         try {
             const response = await api.get("/categorias");
@@ -27,7 +27,7 @@ function AbaHome(props) {
         }
     }
 
-  async function LoadBanner() {
+    async function LoadBanner() {
 
         try {
             const response = await api.get("/banners");
@@ -43,7 +43,7 @@ function AbaHome(props) {
         }
     }
 
-  async function LoadDestaque() {
+    async function LoadDestaque() {
 
         try {
             const response = await api.get("/empresas/destaques");
@@ -59,14 +59,13 @@ function AbaHome(props) {
         }
     }
 
-
-  function OpenCardapio(id) {
+    function OpenCardapio(id) {
         props.navigation.navigate("cardapio", {
             id_empresa: id
         });
     }
 
-  async function RemoveFavorito(id) {
+    async function RemoveFavorito(id) {
 
         try {
             const response = await api.delete("/empresas/" + id + "/favoritos");
@@ -82,7 +81,7 @@ function AbaHome(props) {
         }
     }
 
- async function AddFavorito(id) {
+    async function AddFavorito(id) {
 
         try {
             const response = await api.post("/empresas/" + id + "/favoritos");
@@ -103,10 +102,8 @@ function AbaHome(props) {
             busca: termo
         });
     }
-  
 
-  
-  const [busca, setBusca] = useState("");
+    const [busca, setBusca] = useState("");
     const [categorias, setCategorias] = useState([]);
     const [banners, setBanner] = useState([]);
     const [restaurantes, setRestaurantes] = useState([]);
@@ -116,6 +113,7 @@ function AbaHome(props) {
         LoadBanner();
         LoadDestaque();
     }, []);
+
 
   return <SafeAreaView style={styles.container}>
       <View style={styles.headerBar}>

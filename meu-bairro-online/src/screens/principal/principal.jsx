@@ -17,6 +17,7 @@ function Principal() {
           component={AbaHome}
           options={{
             headerShown: false,
+            unmountOnbur: true,
             tabBarIcon: ({ focused }) => {
               return (
                 <Image
@@ -70,6 +71,7 @@ function Principal() {
             title: "Meu Perfil",
             headerTitleAlign: "center",
             headerShadowVisible: false,
+            unmountOnbur: true,
             // headerShown: false,
             tabBarIcon: ({ focused }) => {
               return (
