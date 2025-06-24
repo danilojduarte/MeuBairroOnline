@@ -10,14 +10,13 @@ async function Destaques(id_usuario){
   
 }
 
-async function Listar(id_usuario, busca){
+async function Listar(id_usuario, busca, id_categoria, id_banner) {
 
-  const empresas = await repositoryEmpresa.Listar(id_usuario, busca);
+    const empresas = await repositoryEmpresa.Listar(id_usuario, busca, id_categoria, id_banner);
 
-  return empresas;
-
-  
+    return empresas;
 }
+
 
 async function InserirFavorito(id_usuario, id_empresa) {
 
@@ -33,23 +32,18 @@ async function ExcluirFavorito(id_usuario, id_empresa) {
     return empresas;
 }
 
-async function Cardapio(id_usuario, id_empresa){
+async function Cardapio(id_usuario, id_empresa) {
 
-  const card = await repositoryEmpresa.Cardapio(id_usuario, id_empresa);
+    const card = await repositoryEmpresa.Cardapio(id_usuario, id_empresa);
 
-  return card;
-
-  
+    return card;
 }
 
-async function ListarProdutoId(id_empresa, id_produto){
+async function ListarProdutoId(id_empresa, id_produto) {
 
-  const produto = await repositoryEmpresa.ListarProdutoId(id_empresa, id_produto);
+    const produto = await repositoryEmpresa.ListarProdutoId(id_empresa, id_produto);
 
-  return produto;
-
-  
+    return produto;
 }
 
-
-export default {Destaques, Listar, InserirFavorito, ExcluirFavorito, Cardapio, ListarProdutoId};
+export default { Destaques, Listar, InserirFavorito, ExcluirFavorito, Cardapio, ListarProdutoId };
