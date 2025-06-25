@@ -1,4 +1,3 @@
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import { COLORS, FONT_SIZE } from "../../constants/themes";
 
 export const styles = {

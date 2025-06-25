@@ -12,12 +12,19 @@ import { COLORS } from "./constants/themes.js";
 const Stack = createNativeStackNavigator();
 
 function RoutesAuth() {
-    return <NavigationContainer>
+     return <NavigationContainer>
 
         <Stack.Navigator>
 
             <Stack.Screen name="principal" component={Principal} options={{
                 headerShown: false
+            }} />
+
+            <Stack.Screen name="busca" component={Busca} options={{
+                title: "Resultados da busca",
+                headerTitleAlign: "center",
+                headerTintColor: COLORS.dark_gray,
+                headerShadowVisible: false
             }} />
 
             <Stack.Screen name="checkout" component={Checkout} options={{
@@ -49,9 +56,7 @@ function RoutesAuth() {
                 headerShown: false
             }} />
 
-            <Stack.Screen name="busca" component={Busca} options={{
-                headerShown: false
-            }} />
+
         </Stack.Navigator>
 
     </NavigationContainer>
