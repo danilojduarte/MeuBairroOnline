@@ -36,7 +36,7 @@ function Principal() {
             title: "Pedidos",
             headerTitleAlign: "center",
             headerShadowVisible: false,
-            unmountOnBlur: true,
+            // unmountOnBlur: true,
             tabBarIcon: ({ focused }) => {
                 return <Image source={icons.abaPedidos}
                     style={{ width: 25, height: 25, opacity: focused ? 1 : 0.3 }} />
